@@ -1,1 +1,2 @@
-# Grupo-05
+# Team do projeto da primeira sprint segundo semestre
+Com o tema
