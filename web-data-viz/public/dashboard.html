@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashboard.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <div class="opcoes links">
+            <a class="logo" href="index.html"><img src="assets/icon/HardStock.png" alt="logo"> </a>
+            <h6><a href="dashboard.html"> CPU </a></h6>
+            <h6><a href="dashboard.html"> Disco </a></h6>
+            <h6><a href="dashboard.html"> Rede </a></h6>
+            <h6><a href="dashboard.html"> Memória </a></h6>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="aside">
+            <div class="dadosComponente">
+                <div class="infosComponente">
+                    <h6 class="componente" id="idComponente"> CPU </h6>
+                    <h6 class="nomeComponente" id="idNomeComponente"> nome do componente </h6>
+                </div>
+
+                <h5 class="monitoramento" id="idMonitoramentoGrafico"> Tempo de atividade: </h6>
+            </div>
+
+            <div class="graficoComponente">
+                <img src="assets/imgs/CPU.png" alt="gráfico">
+            </div>
+
+        </div>
+        <div class="bside">
+            <div class="dado">
+                <h3> Utilização: </h3>
+                <div class="dadoInfo">
+                    <h2> <span id="utilizacao"> 100% </span> </h2>
+                </div>
+            </div>
+            <div class="dado">
+                <h3> Velocidade: </h3>
+                <div class="dadoInfo">
+                    <h2> <span id="velocidade"> 2,09 GHz </span> </h2>
+                </div>
+            </div>
+            <div class="dado">
+                <h3> Threads: </h3>
+                <div class="dadoInfo">
+                    <h2> <span id="threads"> 2400 </span> </h2>
+                </div>
+            </div>
+            <div class="dado">
+                <h3> Processos: </h3>
+                <div class="dadoInfo">
+                    <h2> <span id="processos"> 140 </span> </h2>
+                </div>
+            </div>
+            <div class="dado">
+                <h3> Identificadores: </h3>
+                <div class="dadoInfo">
+                    <h2> <span id="identificadores"> 82750 </span> </h2>
+                </div>
+            </div>
+            <div class="dado">
+                <h3> Tempo de atividade:</h3>
+                <div class="dadoInfo">
+                    <h2> <span id="tempoDeAtividade"> 0:08:17:42 </span> </h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+</script>
