@@ -45,6 +45,16 @@ a:hover{
     align-items: center;
     gap: 10%;
 }
+
+.opcoesMenu {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.opcoesMenu:hover {
+    color: #848484;
+}
+
 .slct{
     color: #848484;
 }
@@ -52,6 +62,16 @@ a:hover{
 /* BODY */
 body {
     background-color: #F3EDE8;
+}
+
+#dashCpu, #dashDisco, #dashRede, #dashMemoria {
+    display: none;
+}
+#dashCpu {
+    display: flex;
+}
+#dashDisco {
+    row-gap: 30%;
 }
 
 .container {
