@@ -19,12 +19,17 @@
     <header>
         <div class="opcoes links">
             <div class="logo">
-                <img href="index.html" src="assets/icon/HardStock.png" alt="logo">
+                <img href="index.html" src="assets/icon/HardStock.svg" alt="logo">
             </div>
-            <h6 class="opcoesMenu" id="cpu" <a onclick="alterarComponente('dashCpu')"> CPU </a></h6>
-            <h6 class="opcoesMenu" id="disco" <a onclick="alterarComponente('dashDisco')"> Disco </a></h6>
-            <h6 class="opcoesMenu" id="rede" <a onclick="alterarComponente('dashRede')"> Rede </a></h6>
-            <h6 class="opcoesMenu" id="memoria" <a onclick="alterarComponente('dashMemoria')"> Memória </a></h6>
+            <div class="opcoesComponentes">
+                <h6 class="opcoesMenu" id="cpu" onclick="alterarComponente('dashCpu')"> CPU </h6>
+                <h6 class="opcoesMenu" id="disco" onclick="alterarComponente('dashDisco')"> Disco </h6>
+                <h6 class="opcoesMenu" id="rede" onclick="alterarComponente('dashRede')"> Rede </h6>
+                <h6 class="opcoesMenu" id="memoria" onclick="alterarComponente('dashMemoria')"> Memória </h6>
+            </div>
+            <div class="sair">
+                <h6 class="opcoesMenu sair" onclick="sair()"> Sair </h6>
+            </div>
         </div>
     </header>
 
@@ -180,7 +185,6 @@
         <h1>rodape</h1>
     </footer>
 </body>
-
 </html>
 <script>
 
@@ -188,38 +192,78 @@
         alterarComponente("dashCpu");
     }
 
-    function alterarComponente(componenteId) {
-        document.getElementById("dashCpu").style.display = "none";
-        document.getElementById("dashDisco").style.display = "none";
-        document.getElementById("dashRede").style.display = "none";
-        document.getElementById("dashMemoria").style.display = "none";
+    // essa função serve pra mudar as métricas na tela de acordo com o componente selecionado no header
+    // quando o item for selecionado, a div correspondente aparece e as outras são escondidas.
 
+    function alterarComponente(componenteId) {
+        const dashComponentes = ["dashCpu", "dashDisco", "dashRede", "dashMemoria"];
+        const componentes = {
+            "dashCpu": "CPU",
+            "dashDisco": "Disco",
+            "dashRede": "Rede",
+            "dashMemoria": "Memória"
+        };
+
+        const nomeComponentes = {
+            "dashCpu": "12th Gen Intel(R) Core(TM) i5-1235U",
+            "dashDisco": "Samsung MZVLQ512HBLU-00B",
+            "dashRede": "Intel(R) Wireless-AC 9560 160MHz",
+            "dashMemoria": "8,00 GB"
+        };
+
+        // esconde a div de todos todos os componentes
+        dashComponentes.forEach(id => {
+            document.getElementById(id).style.display = "none";
+        });
+
+        dashComponentes.forEach(id => {
+            document.getElementById(id).style.fontWeight = (id === componenteId) ? "700" : "500";
+        });
+
+
+        // mostra a div componente selecionado através do id
         document.getElementById(componenteId).style.display = "flex";
 
-        if (componenteId == "dashCpu") {
-            document.getElementById("cpu").style.color = "#848484"
-            document.getElementById("disco").style.color = "#000000"
-            document.getElementById("rede").style.color = "#000000"
-            document.getElementById("memoria").style.color ="#000000"
-        }
-        if (componenteId == "dashDisco") {
-            document.getElementById("cpu").style.color = "#000000"
-            document.getElementById("disco").style.color = "#848484"
-            document.getElementById("rede").style.color = "#000000"
-            document.getElementById("memoria").style.color ="#000000"
-        }
-        if (componenteId == "dashRede") {
-            document.getElementById("cpu").style.color = "#000000"
-            document.getElementById("disco").style.color = "#000000"
-            document.getElementById("rede").style.color = "#848484"
-            document.getElementById("memoria").style.color ="#000000"
-        }
-        if (componenteId == "dashMemoria") {
-            document.getElementById("cpu").style.color = "#000000"
-            document.getElementById("disco").style.color = "#000000"
-            document.getElementById("rede").style.color = "#000000"
-            document.getElementById("memoria").style.color = "#848484"
-        }
+        // mostra o componente e a especificação dele no aside, de acordo as informações do objeto
+        document.getElementById("idComponente").innerHTML = componentes[componenteId];
+        document.getElementById("idNomeComponente").innerHTML = nomeComponentes[componenteId];
+
+
+        // 1- o forEach passa por todos os elementos e tira o dash do nome de cada um, e fica somente com o nome do elemento
+        // exemplo: dashDisco --> Disco
+        
+        // 2- transforma em lower case, pra que fique com o id identico de cada opcao do menu
+        // exemplo: Disco -->
+
+        // 3- verifica se o id que ele está é igual ao id do componente selecionado pelo usuário. se for, a font weight fica em 700(negrito), senão, fica em 500
+        dashComponentes.forEach(id => {
+            const elemento = document.getElementById(id.replace("dash", "").toLowerCase());
+            elemento.style.fontWeight = (id === componenteId) ? "700" : "500";
+        });
+
+        // atualiza o gráfico baseado no dashboard selecionado
+
+        // switch (componenteId) {
+        //     case "dashCpu":
+        //         atualizarGrafico(["Data1", "Data2"], [10, 20]);
+        //         break;
+        //     case "dashDisco":
+        //         atualizarGrafico(["Data3", "Data4"], [30, 40]);
+        //         break;
+        //     case "dashRede":
+        //         atualizarGrafico(["Data5", "Data6"], [50, 60]);
+        //         break;
+        //     case "dashMemoria":
+        //         atualizarGrafico(["Data7", "Data8"], [70, 80]);
+        //         break;
+        // } 
+        // esse codigo considera mais ou menos essa funcao pra atualizar grafico:   function atualizarGrafico(labels, data) 
+
+    }
+    
+    function sair() {
+        sessionStorage.clear()
+        window.location = "index.html"
     }
 
 </script>

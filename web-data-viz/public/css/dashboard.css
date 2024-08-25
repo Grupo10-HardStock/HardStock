@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Work Sans';
+    font-weight: 500;
 }
 
 /* HEADER */
@@ -18,7 +19,7 @@ header {
     padding: 1.25rem 4.5rem; 
 }
 .logo {
-    width: 7%;
+    width: 10%;
 }
 header img{
     width: 100%;
@@ -35,33 +36,30 @@ header img{
     color: #000;
 }
 
-a:hover{
-    transition: 0.3s;
-    color: #848484;
-}
 .opcoes {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 10%;
+    height: 6rem;
+    font-size: 2.4rem;
+}
+.opcoesComponentes {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .opcoesMenu {
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.opcoesMenu:hover {
-    color: #848484;
-}
-
-.slct{
-    color: #848484;
-}
+/* .sair {
+    
+} */
 
 /* BODY */
 body {
-    background-color: #F3EDE8;
+    background-color: #C7D0D8;
 }
 
 #dashCpu, #dashDisco, #dashRede, #dashMemoria {
@@ -119,6 +117,7 @@ body {
     align-items: baseline;
     justify-content: space-around;
     width: 100%;
+    gap: 6%;
 }
 
 .graficoComponente {
@@ -138,8 +137,8 @@ body {
     font-size: 3rem;
 }
 .nomeComponente {
-    font-size: 1.5rem;
-    color: #848484;
+    font-size: 1.8rem;
+    color: #fff;
 }
 .monitoramento {
     font-size: 2rem;
@@ -158,6 +157,13 @@ body {
 }
 .dado h3, h2 {
     padding: .5rem;
+    font-weight: 600;
+    /* white-space: não quebra de linha */
+    white-space: nowrap;
+}
+
+.dado span {
+    font-weight: 400;
 }
 
 .dadoInfo {
@@ -200,12 +206,34 @@ body {
       /* flex-basis: 50%; Em telas menores que 768px, os itens ocuparão a largura total */
     }
   }
-  
+
+  @media (max-width: 768px) {
+    .bside {
+        flex-direction: column;
+        gap: 1.3rem;
+        align-items: stretch;
+        align-content: center;
+        width: 100%;
+    }
+    
+    .dado {
+        font-size: 1.5rem;
+    }
+    .dado h3 {
+        width: 100%;
+    }
+    .dadoInfo {
+        width: auto;
+    }
+
+  }  
+
   @media (max-width: 480px) {
     .dado {
       flex-basis: 100%; /* Em telas menores que 480px, os itens permanecerão ocupando a largura total */
     }
   }
+
 
 /* FOOTER */
 
