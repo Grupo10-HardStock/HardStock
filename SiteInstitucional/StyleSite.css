@@ -127,7 +127,7 @@ text-align: center;
     padding: 10px;
     width: 350px;
     border-radius: 30px;
-    background-color: aliceblue;
+    background-color: white;
     /* height: 10px; */
     /* text-align: center; */
     /* height: 10px; */
@@ -145,7 +145,7 @@ text-align: center;
 }
 
 #minitela{
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
     height: 100%;
     width: 100%;
     display: flex;
@@ -155,13 +155,52 @@ text-align: center;
 #miniesquerda{
     height: 100%;
     width: 50%;
-    background-color: orangered;
+    /* background-color: orangered; */
+    display: flex;
+    align-items: left;
+    /* justify-content: center; */
+    flex-direction: column;
+    
+    /* padding: 15px; */
+}
+
+#titulo{
+    color: white;
+    font-size: 56px;
+    /* padding: 20px; */
+}
+
+#contexto{
+    color: white;
+    font-size: 39px;
+    /* padding: 20px; */
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#nossaSolucao{
+    /* width: 50%; */
+/* margin-top: 15px; */
+display: flex;
+align-items: center;
+/* justify-content: center; */
+}
+
+#miniesquerda a{
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    width: 250px;
+    border-radius: 30px;
+    background-color: white;
 }
 
 #minidireita{
     height: 100%;
     width: 50%;
-    background-color: royalblue;
+    /* background-color: royalblue; */
     border-radius: 10px;
 }
 
