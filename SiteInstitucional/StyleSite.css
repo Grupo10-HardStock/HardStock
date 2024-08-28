@@ -138,4 +138,35 @@ text-align: center;
     height: 100vh;
     width: 100%;
     background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+}
+
+#minitela{
+    background-color: rebeccapurple;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+}
+
+#miniesquerda{
+    height: 100%;
+    width: 50%;
+    background-color: orangered;
+}
+
+#minidireita{
+    height: 100%;
+    width: 50%;
+    background-color: royalblue;
+    border-radius: 10px;
+}
+
+#minidireita img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
 }
