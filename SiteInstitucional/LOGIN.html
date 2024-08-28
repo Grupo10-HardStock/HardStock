@@ -20,10 +20,56 @@
             <div class="direita2"><b>Login</b>
             <a class="aa" href="CADASTRO.html">Cadastro</a></div>
             <div class="bloco">
-            E-mail:<input class="inputs" type="text"><br>
-            Senha:<input class="inputs" type="password"></div>
-            <div class="lugar-btn2"><button class="btn">Entrar</button></div>
+            E-mail:<input class="inputs" id="input_email" type="text"><br>
+            Senha:<input class="inputs" id="input_senha" type="password"></div>
+            <div class="lugar-btn2"><button onclick="entrar()" class="btn">Entrar</button></div>
         </div>
     </div>
 </body>
 </html>
+<script>
+
+function entrar(){ 
+
+var email = input_email.value
+var senha = input_senha.value
+var carac_email = email.indexOf('@')
+
+if (email == '' && senha == '') {
+
+alert('Preencha todos os campos')
+return false
+}
+
+if (email == '') {
+
+    alert('Digite seu email')
+    
+} else if (senha == '') {
+
+    alert('Digite sua senha')
+    
+}
+
+
+if (carac_email == -1 ) {
+
+    alert('E-mail inválido')
+    return false
+    
+}
+
+else if (senha.length < 8 ){
+
+    alert('Senha inválida')
+    return false
+}
+
+window.location.href = "Dashboard.html"
+return true
+
+
+}
+
+
+</script>
