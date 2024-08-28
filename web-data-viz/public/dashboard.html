@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/dashboard.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -45,7 +47,10 @@
             </div>
 
             <div class="graficoComponente">
-                <img src="assets/imgs/CPU.png" alt="gráfico">
+                <!-- <img src="assets/imgs/CPU.png" alt="gráfico"> -->
+                <div class="graficoChart">
+                    <canvas id="myChart"></canvas>
+                </div>
             </div>
         </div>
 
@@ -240,30 +245,34 @@
             const elemento = document.getElementById(id.replace("dash", "").toLowerCase());
             elemento.style.fontWeight = (id === componenteId) ? "700" : "500";
         });
-
-        // atualiza o gráfico baseado no dashboard selecionado
-
-        // switch (componenteId) {
-        //     case "dashCpu":
-        //         atualizarGrafico(["Data1", "Data2"], [10, 20]);
-        //         break;
-        //     case "dashDisco":
-        //         atualizarGrafico(["Data3", "Data4"], [30, 40]);
-        //         break;
-        //     case "dashRede":
-        //         atualizarGrafico(["Data5", "Data6"], [50, 60]);
-        //         break;
-        //     case "dashMemoria":
-        //         atualizarGrafico(["Data7", "Data8"], [70, 80]);
-        //         break;
-        // } 
-        // esse codigo considera mais ou menos essa funcao pra atualizar grafico:   function atualizarGrafico(labels, data) 
-
     }
     
     function sair() {
         sessionStorage.clear()
         window.location = "index.html"
     }
+
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['14:16:34', '14:16:35', '14:16:36', '14:16:37', '14:16:38', '14:16:39'],
+            datasets: [{
+                label: '% de uso',
+                data: [18, 11, 30, 45, 77, 20],
+                borderWidth: 1,
+                borderColor: "#C7D",
+                backgroundColor: "#C7D"
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 
 </script>

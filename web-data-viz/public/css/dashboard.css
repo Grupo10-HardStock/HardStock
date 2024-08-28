@@ -133,6 +133,14 @@ body {
     width: 100%;
 }
 
+.graficoChart {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height:40vh; 
+    width:80vw;
+}
+
 .componente {
     font-size: 3rem;
 }
@@ -193,6 +201,10 @@ body {
     .dadosComponente {
         gap: 1rem;
     }
+    .graficoChart {
+        height:50vh; 
+        width:100vw;
+    }
 
     .bside {
         flex-direction: row;
@@ -208,12 +220,21 @@ body {
   }
 
   @media (max-width: 768px) {
+
+    .infosComponente {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
     .bside {
         flex-direction: column;
         gap: 1.3rem;
         align-items: stretch;
         align-content: center;
         width: 100%;
+    }
+    .graficoChart {
+        padding: 1rem;
     }
     
     .dado {
@@ -231,6 +252,9 @@ body {
   @media (max-width: 480px) {
     .dado {
       flex-basis: 100%; /* Em telas menores que 480px, os itens permanecerão ocupando a largura total */
+    }
+    .container {
+        padding: 10rem 2rem 3rem;
     }
   }
 
