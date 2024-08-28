@@ -9,6 +9,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -24,7 +26,12 @@
             <div class="logo">
                 <img href="index.html" src="assets/icon/HardStock.svg" alt="logo">
             </div>
-            <div class="opcoesComponentes">
+
+            <span class="iconMenuBurg" onclick="clickMenu()">
+                <img src="assets/icon/iconMenu.svg">
+            </span>
+
+            <div class="opcoesComponentes" id="itens">
                 <h6 class="opcoesMenu" id="cpu" onclick="alterarComponente('dashCpu')"> CPU </h6>
                 <h6 class="opcoesMenu" id="disco" onclick="alterarComponente('dashDisco')"> Disco </h6>
                 <h6 class="opcoesMenu" id="rede" onclick="alterarComponente('dashRede')"> Rede </h6>
@@ -191,6 +198,7 @@
         <h1>rodape</h1>
     </footer>
 </body>
+
 </html>
 <script>
 
@@ -198,10 +206,31 @@
         alterarComponente("dashCpu");
     }
 
+    // essa funcao abre e fecha o menu do header em telas pequenas!
+    function clickMenu() {
+        const menu = document.getElementById('itens')
+        menu.classList.toggle('exibir')
+        // classList -> permite adicionar, remover, alternar (toggle) ou verificar uma classe
+        // alternando para a classe 'exibir', o css passa a pegar as propriedades dessa classe que, 
+        // no caso, é só pra deixar display flex.
+        // obs: essa forma só substitui um if ('displ==none') -> displ=flex
+    }
+
+
+
     // essa função serve pra mudar as métricas na tela de acordo com o componente selecionado no header
     // quando o item for selecionado, a div correspondente aparece e as outras são escondidas.
 
     function alterarComponente(componenteId) {
+        // essas duas linhas servem pra quando o usuário clicar em um item do menu, caso a tela seja pequena
+        // e esteja no menu burger, a lista vai sumir de novo, removendo a classe 'exibir'
+        const menu = document.getElementById('itens')
+        menu.classList.remove('exibir')
+        // obs: se fosse .toggle('exibir') também serviria para remover, mas como essa função é chamada de início para
+        // a CPU, a lista começaria aberta. Usar o .remove garante que a lista sempre se feche ao selecionar um item.
+        
+
+
         const dashComponentes = ["dashCpu", "dashDisco", "dashRede", "dashMemoria"];
         const componentes = {
             "dashCpu": "CPU",
@@ -237,7 +266,7 @@
 
         // 1- o forEach passa por todos os elementos e tira o dash do nome de cada um, e fica somente com o nome do elemento
         // exemplo: dashDisco --> Disco
-        
+
         // 2- transforma em lower case, pra que fique com o id identico de cada opcao do menu
         // exemplo: Disco -->
 
@@ -247,7 +276,7 @@
             elemento.style.fontWeight = (id === componenteId) ? "700" : "500";
         });
     }
-    
+
     function sair() {
         sessionStorage.clear()
         window.location = "index.html"
