@@ -19,10 +19,12 @@ header {
     padding: 1.25rem 4.5rem; 
 }
 .logo {
+    display: flex;
     width: 10%;
 }
 header img{
     width: 100%;
+    cursor: pointer;
 }
 .links {
     display: flex;
@@ -251,8 +253,12 @@ body {
   }  
 
   @media (max-width: 480px) {
+    header img {
+        width: 3rem;
+    }
+
     .dado {
-      flex-basis: 100%; /* Em telas menores que 480px, os itens permanecerão ocupando a largura total */
+      flex-basis: 100%; /* itens ocupam a largura total! */
     }
     .container {
         padding: 10rem 2rem 3rem;
@@ -263,32 +269,33 @@ body {
     .iconMenuBurg {
         display: flex;
     }
-    .material-symbols-outlined {
-      font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24
-    }
-
+  
     .opcoesMenu {
-        background-color: #4f4e4e94;
+        background-color: #4f4e4ee3;
         color: #fff;
         width: 100%;
         padding: 0.5rem;
         text-align: center;
         border-bottom: 1px solid #ccc;
+        transition: 0.3s;
+    }
+    .opcoesMenu:hover {
+        color: #000;
     }
     .sair {
         background-color: unset;
         color: #000;
     }
 
+    .opcoes {
+        height: auto;
+    }
+
     .opcoesComponentes {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 6rem; /* essas configs garantem que a lista nao fique escondida acima da tela*/
+        top: 3.7rem; /* essas configs garantem que a lista nao fique escondida acima da tela*/
         left: 0;
         width: 100%; 
     }
