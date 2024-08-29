@@ -170,7 +170,7 @@ body {
 .dado h3, h2 {
     padding: .5rem;
     font-weight: 600;
-    white-space: nowrap; /* impede a quebra de linha */
+    /* white-space: nowrap; impede a quebra de linha */
 }
 
 .dado span {
