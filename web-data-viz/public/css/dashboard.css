@@ -13,16 +13,18 @@ header {
     justify-content: space-around;
     position: absolute;
     width: 100%;
-    height: 100px;
+    height: auto;
     top: 0;
     left: 0;
     padding: 1.25rem 4.5rem; 
 }
 .logo {
+    display: flex;
     width: 10%;
 }
 header img{
     width: 100%;
+    cursor: pointer;
 }
 .links {
     display: flex;
@@ -48,14 +50,16 @@ header img{
     width: 100%;
     justify-content: space-evenly;
 }
+/* escondendo o icone burg inicialmente */
+.iconMenuBurg {
+    display: none;
+    cursor: pointer;
+}
 
 .opcoesMenu {
     cursor: pointer;
 }
 
-/* .sair {
-    
-} */
 
 /* BODY */
 body {
@@ -133,6 +137,14 @@ body {
     width: 100%;
 }
 
+.graficoChart {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height:40vh; 
+    width:80vw;
+}
+
 .componente {
     font-size: 3rem;
 }
@@ -158,8 +170,7 @@ body {
 .dado h3, h2 {
     padding: .5rem;
     font-weight: 600;
-    /* white-space: não quebra de linha */
-    white-space: nowrap;
+    /* white-space: nowrap; impede a quebra de linha */
 }
 
 .dado span {
@@ -193,6 +204,10 @@ body {
     .dadosComponente {
         gap: 1rem;
     }
+    .graficoChart {
+        height:50vh; 
+        width:100vw;
+    }
 
     .bside {
         flex-direction: row;
@@ -208,12 +223,21 @@ body {
   }
 
   @media (max-width: 768px) {
+
+    .infosComponente {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
     .bside {
         flex-direction: column;
         gap: 1.3rem;
         align-items: stretch;
         align-content: center;
         width: 100%;
+    }
+    .graficoChart {
+        padding: 1rem;
     }
     
     .dado {
@@ -229,8 +253,54 @@ body {
   }  
 
   @media (max-width: 480px) {
+    header img {
+        width: 3rem;
+    }
+
     .dado {
-      flex-basis: 100%; /* Em telas menores que 480px, os itens permanecerão ocupando a largura total */
+      flex-basis: 100%; /* itens ocupam a largura total! */
+    }
+    .container {
+        padding: 10rem 2rem 3rem;
+    }
+
+    /* MENU BURGUER PARA CELULARES */
+
+    .iconMenuBurg {
+        display: flex;
+    }
+  
+    .opcoesMenu {
+        background-color: #4f4e4ee3;
+        color: #fff;
+        width: 100%;
+        padding: 0.5rem;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+        transition: 0.3s;
+    }
+    .opcoesMenu:hover {
+        color: #000;
+    }
+    .sair {
+        background-color: unset;
+        color: #000;
+    }
+
+    .opcoes {
+        height: auto;
+    }
+
+    .opcoesComponentes {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 3.7rem; /* essas configs garantem que a lista nao fique escondida acima da tela*/
+        left: 0;
+        width: 100%; 
+    }
+    .opcoesComponentes.exibir {
+        display: flex;
     }
   }
 

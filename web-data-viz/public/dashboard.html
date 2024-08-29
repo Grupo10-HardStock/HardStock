@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="shortcut icon" href="assets/icon/HardStock.png" type="image/x-icon">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +26,12 @@
             <div class="logo">
                 <img href="index.html" src="assets/icon/HardStock.svg" alt="logo">
             </div>
-            <div class="opcoesComponentes">
+
+            <span class="iconMenuBurg" onclick="clickMenu()">
+                <img src="assets/icon/iconMenu.svg">
+            </span>
+
+            <div class="opcoesComponentes" id="itens">
                 <h6 class="opcoesMenu" id="cpu" onclick="alterarComponente('dashCpu')"> CPU </h6>
                 <h6 class="opcoesMenu" id="disco" onclick="alterarComponente('dashDisco')"> Disco </h6>
                 <h6 class="opcoesMenu" id="rede" onclick="alterarComponente('dashRede')"> Rede </h6>
@@ -45,7 +55,10 @@
             </div>
 
             <div class="graficoComponente">
-                <img src="assets/imgs/CPU.png" alt="gráfico">
+                <!-- <img src="assets/imgs/CPU.png" alt="gráfico"> -->
+                <div class="graficoChart">
+                    <canvas id="myChart"></canvas>
+                </div>
             </div>
         </div>
 
@@ -185,6 +198,7 @@
         <h1>rodape</h1>
     </footer>
 </body>
+
 </html>
 <script>
 
@@ -192,10 +206,31 @@
         alterarComponente("dashCpu");
     }
 
+    // essa funcao abre e fecha o menu do header em telas pequenas!
+    function clickMenu() {
+        const menu = document.getElementById('itens')
+        menu.classList.toggle('exibir')
+        // classList -> permite adicionar, remover, alternar (toggle) ou verificar uma classe
+        // alternando para a classe 'exibir', o css passa a pegar as propriedades dessa classe que, 
+        // no caso, é só pra deixar display flex.
+        // obs: essa forma só substitui um if ('displ==none') -> displ=flex
+    }
+
+
+
     // essa função serve pra mudar as métricas na tela de acordo com o componente selecionado no header
     // quando o item for selecionado, a div correspondente aparece e as outras são escondidas.
 
     function alterarComponente(componenteId) {
+        // essas duas linhas servem pra quando o usuário clicar em um item do menu, caso a tela seja pequena
+        // e esteja no menu burger, a lista vai sumir de novo, removendo a classe 'exibir'
+        const menu = document.getElementById('itens')
+        menu.classList.remove('exibir')
+        // obs: se fosse .toggle('exibir') também serviria para remover, mas como essa função é chamada de início para
+        // a CPU, a lista começaria aberta. Usar o .remove garante que a lista sempre se feche ao selecionar um item.
+        
+
+
         const dashComponentes = ["dashCpu", "dashDisco", "dashRede", "dashMemoria"];
         const componentes = {
             "dashCpu": "CPU",
@@ -231,7 +266,7 @@
 
         // 1- o forEach passa por todos os elementos e tira o dash do nome de cada um, e fica somente com o nome do elemento
         // exemplo: dashDisco --> Disco
-        
+
         // 2- transforma em lower case, pra que fique com o id identico de cada opcao do menu
         // exemplo: Disco -->
 
@@ -240,30 +275,34 @@
             const elemento = document.getElementById(id.replace("dash", "").toLowerCase());
             elemento.style.fontWeight = (id === componenteId) ? "700" : "500";
         });
-
-        // atualiza o gráfico baseado no dashboard selecionado
-
-        // switch (componenteId) {
-        //     case "dashCpu":
-        //         atualizarGrafico(["Data1", "Data2"], [10, 20]);
-        //         break;
-        //     case "dashDisco":
-        //         atualizarGrafico(["Data3", "Data4"], [30, 40]);
-        //         break;
-        //     case "dashRede":
-        //         atualizarGrafico(["Data5", "Data6"], [50, 60]);
-        //         break;
-        //     case "dashMemoria":
-        //         atualizarGrafico(["Data7", "Data8"], [70, 80]);
-        //         break;
-        // } 
-        // esse codigo considera mais ou menos essa funcao pra atualizar grafico:   function atualizarGrafico(labels, data) 
-
     }
-    
+
     function sair() {
         sessionStorage.clear()
         window.location = "index.html"
     }
+
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['14:16:34', '14:16:35', '14:16:36', '14:16:37', '14:16:38', '14:16:39'],
+            datasets: [{
+                label: '% de uso',
+                data: [18, 11, 30, 45, 77, 20],
+                borderWidth: 1,
+                borderColor: "#C7D",
+                backgroundColor: "#C7D"
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 
 </script>

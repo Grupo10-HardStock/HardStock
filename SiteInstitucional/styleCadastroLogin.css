@@ -1,0 +1,149 @@
+* body{
+    margin: 0;
+    background-color: #ffffff;
+}
+
+
+.login{
+    height: 600px;
+      display: flex;
+      justify-content: space-evenly;
+      font-family: "DM Sans", sans-serif;
+      font-size: 29px;
+}
+
+.login .direita1{
+background-color: #ffffff;
+width: 700px;
+height: 600px;
+justify-content: left;
+align-items: center;
+}
+
+.login .direita1 .direita2{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 9px;
+    padding-left: 250px;
+}
+
+
+.login .esquerda1{
+background-color: #c7d0d8;
+width: 645px;
+height: 615px;
+justify-content: center;
+align-items: center;
+padding-bottom: 30px;
+color: white;
+}
+
+.nome{
+    width: 590px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    padding-left: 35px;
+}
+
+.aa {
+    text-decoration: none;
+    color:#31241E ;
+    font-family: "DM Sans", sans-serif;
+}
+
+.ab {
+    text-decoration: none;
+    color:#ffffff ;
+    font-family: "DM Sans", sans-serif;
+    align-items: start;
+}
+
+  .inputs{
+    position:relative;
+    width: 400px;
+    padding:10px 10px;
+    border-radius:15px;
+    border: 0px;
+    outline: none;
+    background:#c7d0d8;
+    color:rgb(82, 82, 82) ;
+    font-weight: bold;
+    font-size: 1.00rem;
+        
+    }
+ 
+    .btn{
+        color:white;
+        width: 100px;
+        height: 35px;
+        justify-content: center;
+        align-items: center;
+        display:flex ;
+        background-color: #000000;
+        font-weight: bold;
+        border-radius: 20px;
+        outline: 0px;
+        border:0px;
+    }
+
+    .btn, p {
+        font-size: 15px;
+        margin-top: 7px;
+        margin-bottom: 0;
+    }
+    .btn:hover{
+        background-color: #292929;
+        box-shadow: 0px 0px 10px #292929;
+        transform: translate(0px, -5px);
+        transition:transform 0.5s;
+    }
+
+    .lugar-btn{
+        padding-top: 120px;
+        padding-left: 300px;
+    }
+
+    .lugar-btn2{
+        padding-top: 170px;
+        padding-left: 310px;
+    }
+
+    .bloco{
+        width: 300px;
+        height: 175px;
+        padding-top: 175px;
+        padding-left: 165px;
+    }
+
+    .bloco2{
+        width: 300px;
+        height: 335px;
+      padding-top: 110px;
+      padding-left: 160px;
+    }
+
+    .banner{
+        background-image: url(HardStock\(Preto\).png);
+        background-repeat: no-repeat;
+        height: 568px;
+        width: 570px;
+        color: rgb(0, 0, 0);
+        padding: 1px;
+        background-size: cover;
+
+    } 
+ @media only screen and( max-width: 768px) {
+
+    #nav1{
+        /* background-color: blue; */
+        /* width: 1%;  */
+    }
+    }
+
+
+    #nav1{
+        /* background-color: blue; */
+        /* width: 1%;  */
+    }
