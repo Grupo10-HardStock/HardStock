@@ -18,6 +18,11 @@ fun main() {
     computador1.setTeclado(true);
     computador1.setLigado(true);
     computador1.atualizarSistema("Linux");
+    computador1.setApps("Vs code");
+    computador1.setApps("Calculadora");
+    computador1.mostrarApps();
+    println("----------------------------------")
+    Thread.sleep(1000);
 
     println(computador1.detalhes())
     println("----------------------------------")
@@ -44,12 +49,12 @@ fun main() {
 
     print("Informe a quantidade de armazenamento do disco: ");
     computador2.setDisco(snNumero.nextInt());
-
     println("----------------------------------")
     println(computador2.detalhes());
 
     print("Informe a quantidade de armazenamento utilizado: ");
     println("A Quantidade de armazenamento disponível é ${computador2.calcularArmazenamento(snNumero.nextDouble())} GB");
+    Thread.sleep(3000);
 
     computador2.ligar();
     println(computador2.detalhes());

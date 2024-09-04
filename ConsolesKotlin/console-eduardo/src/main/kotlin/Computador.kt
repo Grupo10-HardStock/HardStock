@@ -10,6 +10,8 @@ class Computador(private var teclado: Boolean = false, private var mouse: Boolea
     private var qtdDisco: Int = 0;
     private var ligado: Boolean = false;
 
+    private var listaAplicativos = mutableListOf<String>();
+
     // Metódos
     public fun detalhes(): String {
 
@@ -27,23 +29,28 @@ class Computador(private var teclado: Boolean = false, private var mouse: Boolea
         """.trimIndent()
     }
 
-    public fun atualizarSistema(sistema: String){
+    public fun mostrarApps(){
+        println("Sua lista de aplicativos é ${getApps()}");
+    }
+
+    public fun atualizarSistema(sistema: String) {
         this.setSistema(sistema)
     }
 
-    public fun calcularArmazenamento(usado: Double): Double{
+    public fun calcularArmazenamento(usado: Double): Double {
         // poderia dar o return getDisco() - usado para otimizar
         val armazenamentoDisponivel = getDisco() - usado;
         return armazenamentoDisponivel;
     }
 
-    public fun ligar(){
+    public fun ligar() {
         this.ligado = true
     }
 
-    public fun desligar(){
+    public fun desligar() {
         this.ligado = false
     }
+
 
     // Metódos especiais
     public fun getMarca(): String {
@@ -128,7 +135,7 @@ class Computador(private var teclado: Boolean = false, private var mouse: Boolea
         this.mouse = mouse;
     }
 
-    public fun getLigado(): String{
+    public fun getLigado(): String {
         var ligad0: String = "Desligado";
 
         if (ligado) {
@@ -137,7 +144,21 @@ class Computador(private var teclado: Boolean = false, private var mouse: Boolea
         return ligad0
     }
 
-    public fun setLigado(ligado : Boolean){
+    public fun setLigado(ligado: Boolean) {
         this.ligado = ligado;
+    }
+
+    public fun getApps(): String{
+
+        var textoApp: String = "";
+
+    for (textoDaVez in listaAplicativos){
+        textoApp += "\n ${textoDaVez}";
+    }
+        return textoApp;
+    }
+
+    public fun setApps(app :String){
+        this.listaAplicativos.add(app);
     }
 }
