@@ -55,6 +55,16 @@ CONSTRAINT fkDadosComputador FOREIGN KEY (fkComputador)
 	REFERENCES ComponenteComputador (fkComputador)
 );
 
+INSERT INTO Componente(nomeComponente, unidadeMedida)
+VALUES("CPU", "Porcentagem");
+INSERT INTO Componente(nomeComponente, unidadeMedida)
+VALUES("Disco", "Porcentagem");
+INSERT INTO Componente(nomeComponente, unidadeMedida)
+VALUES("Rede", "KB/s");
+INSERT INTO Componente(nomeComponente, unidadeMedida)
+VALUES("Memória", "Porcentagem");
+SELECT * FROM Componente;
+
 
 
 
