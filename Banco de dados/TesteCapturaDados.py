@@ -1,5 +1,5 @@
 import psutil
-#from mysql.connector import connect, Error
+from mysql.connector import connect, Error
 
 
 # Fazendo um loop para mostrar a porcentagem de uso da CPU
@@ -62,12 +62,33 @@ print(f"A quantidade de memória ram utlizada é {mem.used}")
 
 # Fazendo conexões com o banco de dados
 
-"""config = {
+config = {
     
 'user':root,
 'password':10062006Dudu,
-'host':'localhost',
+'host': 192.168.56.1,
 'database': HardStock
-}"""
+}
+
+
+try:
+    db = connect(**config)
+    if db.is_connected():
+        db_info = db.get_server_info()
+        print('Connected to MySQL server version -', db_info)
+        porc_cpu = psutil.cpu_percent()
+        with db.cursor() as cursor:
+            query = ("INSERT INTO Dados VALUES "
+                     "(1,1,{porc_cpu})")
+            value = [round(perc_cpu, 2)]
+            cursor.execute(query, value)
+            db.commit()
+            print(cursor.rowcount, "registro inserido")
+        
+        cursor.close()
+        db.close()
+
+except Error as e:
+    print('Error to connect with MySQL -', e)   
 
 
