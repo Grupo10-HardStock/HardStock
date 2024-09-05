@@ -1,5 +1,5 @@
 import psutil
-from mysql.connector import connect, Error
+#from mysql.connector import connect, Error
 
 
 # Fazendo um loop para mostrar a porcentagem de uso da CPU
@@ -62,7 +62,7 @@ print(f"A quantidade de memória ram utlizada é {mem.used}")
 
 # Fazendo conexões com o banco de dados
 
-config = {
+"""config = {
     
 'user':'root',
 'password':'10062006Dudu',
@@ -89,6 +89,7 @@ try:
         db.close()
 
 except Error as e:
-    print('Error to connect with MySQL -', e)   
+    print('Error to connect with MySQL -', e)
+    """
 
 
