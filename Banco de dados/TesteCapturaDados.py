@@ -64,10 +64,10 @@ print(f"A quantidade de memória ram utlizada é {mem.used}")
 
 config = {
     
-'user':root,
-'password':10062006Dudu,
-'host': 192.168.56.1,
-'database': HardStock
+'user':'root',
+'password':'10062006Dudu',
+'host': '192.168.56.1',
+'database': 'HardStock'
 }
 
 
