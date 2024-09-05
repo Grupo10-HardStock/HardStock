@@ -78,7 +78,7 @@ try:
         print('Connected to MySQL server version -', db_info)
         porc_cpu = psutil.cpu_percent()
         with db.cursor() as cursor:
-            query = ("INSERT INTO Dados VALUES "
+            query = ("INSERT INTO Dados(fkComponente, fkComputador,registro) VALUES "
                      "(1,1,{porc_cpu})")
             value = [round(perc_cpu, 2)]
             cursor.execute(query, value)
