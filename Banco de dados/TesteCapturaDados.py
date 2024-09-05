@@ -8,7 +8,7 @@ import psutil
 # Mas tenho que aprender a fazer isso em python
 a = 1
 while(a < 25):
-    print(f"O porcentual de uso da CPU atualmente está em {psutil.cpu_percent(interval=None)}")
+    print(f"O porcentual de uso da CPU atualmente está em {psutil.cpu_percent(interval=2)}")
     a = a + 1
 print("Finalizado")
 
