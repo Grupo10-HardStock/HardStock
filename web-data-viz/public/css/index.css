@@ -132,7 +132,7 @@ header {
 }
 
 .contextoTxt h6 {
-    font-size: 2.7rem;
+    font-size: clamp(1.8rem, 2.6vw, 2.6rem);
     font-weight: 300;
 }
 
@@ -152,12 +152,17 @@ header {
     align-items: center;
     justify-content: flex-end;
     height: 100%;
-    width: 50%;
+    width: 60%;
 }
 
-.bside img {
-    width: 80%;
-    border-radius: 10px;
+.imagem {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    background-image: url(../assets/imgs/acoes.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 /* SEÇÃO 3 */
@@ -195,9 +200,8 @@ header {
     align-items: center;
     background-color: #c7d0d8;
     width: 30%;
-    height: 54vh;
     border-radius: 3rem;
-    font-size: 2.3rem;
+    font-size: clamp(1.5rem, 2.6vw, 2.6rem);    
     padding: 1.5%;
     box-sizing: border-box;
     overflow: hidden;
@@ -209,6 +213,7 @@ header {
 
 .porque_box h6 {
     font-weight: 500;
+    padding: .5rem;
 }
 
 .foto {
@@ -217,7 +222,6 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
 }
 
 /* SEÇÃO 4 */
@@ -238,23 +242,23 @@ header {
     flex-wrap: wrap;
     width: 100%;
     align-items: flex-end;
-    padding: 2%;
+    padding: 1% 3% 0;
 }
 
 .container_equipe {
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content: center;
-    align-items: center;
+    align-content: center;
+    justify-items: center;
     width: 100%;
-    height: 70%;
+    height: 100%;
     row-gap: 4rem;
     column-gap: 7rem;
-    /* padding: 2% 8%; */
+    padding: 0 8%;
 }
 
 .container_equipe img {
-    width: 100%;
+    width: 60%;
     cursor: pointer;
     transition: 0.4s;
     box-shadow: #0000003e 0 0 8px 0px;
@@ -304,8 +308,74 @@ footer h5 {
 
 /* RESPONSIVIDADE */
 
-@media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+    .nossaSolucao {
+        flex-direction: column;
+        justify-content: center;
+        padding: 3%;
+    }
+    .aside, .bside, .contexto {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .aside a {
+        font-size: 1.6rem;
+    }
 
-@media (max-width: 768px) {}
+    .imagem {
+        border-radius: 30px;
+    }
 
-@media (max-width: 480px) {}
+    .section_porque {
+        height: auto;
+    }
+
+    .container_porques {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .porque_box {
+        min-height: 20vh;
+        width: 80%;
+        font-size: 2.5rem;
+        border-radius: 20px;
+    }
+
+    .section_equipe {
+        height: 100%;
+    }
+    .container_equipe {
+        padding: 4% 8%;
+        column-gap: 2rem;
+        row-gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .porque_box {
+        font-size: 1.9rem;
+    }
+    .titulo_equipe {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container_equipe {
+        column-gap: .5rem;
+        row-gap: 1.5rem;
+    }
+    .bside {
+        height: 20%;
+    }
+    footer h5{
+        font-size: 1rem;
+    }
+    .esquerda {
+        width: 40%;
+    }
+}
