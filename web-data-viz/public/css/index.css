@@ -211,7 +211,7 @@ header {
     font-weight: 500;
 }
 
-.foto  {
+.foto {
     border-radius: 10%;
     background-image: url(../assets/imgs/teamwork.jpg);
     background-repeat: no-repeat;
@@ -238,23 +238,23 @@ header {
     flex-wrap: wrap;
     width: 100%;
     align-items: flex-end;
-    padding-top: 2%;
+    padding: 2%;
 }
 
 .container_equipe {
+    display: grid;
+    grid-template-columns: auto auto auto;
     justify-content: center;
-    height: 77%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    width: 70%;
-    flex-wrap: wrap;
-    padding: 2% 8% 1%;
-    gap: 6%;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    row-gap: 4rem;
+    column-gap: 7rem;
+    /* padding: 2% 8%; */
 }
 
 .container_equipe img {
-    height: 50%;
+    width: 100%;
     cursor: pointer;
     transition: 0.4s;
     box-shadow: #0000003e 0 0 8px 0px;
@@ -279,6 +279,7 @@ footer {
     padding: 2%;
     font-size: 2.25rem;
 }
+
 footer h5 {
     font-weight: 400;
 }
@@ -302,3 +303,9 @@ footer h5 {
 
 
 /* RESPONSIVIDADE */
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 480px) {}
