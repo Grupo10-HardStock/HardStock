@@ -1,149 +1,416 @@
-* body{
+@media only screen and (max-width: 1500px) {
+    * body {
+        padding: 0;
+        background-color: #ffffff;
+
+
+    }
+
+    .login {
+        height: 30vh;
+        width: 100vh;
+        display: flex;
+        justify-content: space-between;
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.8rem;
+        flex-direction: row;
+    }
+
+    .lugar-btn {
+        padding-left: 38%;
+        padding-top: 3%;
+        padding-bottom: 50%;
+    }
+
+    .bloco2 {
+        width: 20vh;
+        height: 30vh;
+        padding-top: 18%;
+        padding-left: 13%;
+    }
+
+    .lugar-btn {
+        padding-left: 13%;
+        padding-top: 3%;
+        width: 60vh;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 0%;
+    }
+
+    .banner {
+        background-image: url(HardStock\(Preto\).png);
+        background-repeat: no-repeat;
+        height: 50vh;
+        color: rgb(0, 0, 0);
+        padding: 1px;
+        background-size: cover;
+
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    * body {
+        padding: 0;
+        background-color: #ffffff;
+        height: 100%;
+    }
+
+    .login {
+        height: 100vh;
+        width: 100vh;
+        display: flex;
+        justify-content: space-between;
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.8rem;
+        flex-direction: row;
+    }
+
+    .lugar-btn {
+        padding-left: 13%;
+        padding-top: 5%;
+        width: 60vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .bloco2 {
+        width: 70vh;
+        height: 40vh;
+        padding-top: 18%;
+        padding-left: 13%;
+    }
+
+    .login .direita1 .direita2 {
+        display: flex;
+        width: 100vh;
+        justify-content: end;
+        /* align-items: center; */
+        justify-content: space-evenly;
+        padding-top: 3%;
+        /* padding-left: 250px; */
+    }
+
+    .banner {
+        background-image: url(HardStock\(Preto\).png);
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vh;
+        color: rgb(0, 0, 0);
+        padding: 1px;
+        background-size: cover;
+
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    * body {
+        padding: 0;
+        background-color: #ffffff;
+        height: 100vh;
+    }
+
+    .login {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.8rem;
+        flex-direction: column;
+    }
+
+    .login .direita1 {
+        background-color: #f50000;
+        width: 100vh;
+        height: 100vh;
+        justify-content: end;
+        align-items: end;
+        padding-right: 0%;
+    }
+
+    .btn {
+        color: white;
+        width: 15vh;
+        height: 5vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background-color: #000000;
+        font-weight: bold;
+        border-radius: 20px;
+        outline: 0%;
+        border: 0%;
+        padding-bottom: 25%;
+    }
+
+    .lugar-btn {
+        padding-left: 13%;
+        padding-top: 3%;
+        width: 60vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .bloco2 {
+        width: 20vh;
+        height: 30vh;
+        padding-top: 18%;
+        padding-left: 13%;
+    }
+
+    .banner {
+        background-image: url(HardStock\(Preto\).png);
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 120vh;
+    color: rgb(0, 0, 0);
+    padding: 5vh;
+    background-size: cover;
+    align-items: center;
+
+
+    }
+
+    .login .esquerda1 {
+        background-color: #c7d0d8;
+        width: 140vh;
+        height: 200vh;
+        justify-content: center;
+        align-items: baseline;
+        padding-bottom: 0%;
+        padding-left: 0%;
+        color: white;
+    }
+
+
+}
+
+@media only secreen and (max-width: 424px) {
+    * body {
+        padding: 0;
+        background-color: #ffffff;
+
+    }
+
+    .login {
+        height: 100%;
+        width: 100vh;
+        display: flex;
+        justify-content: space-between;
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.8rem;
+        flex-direction: column;
+    }
+
+    .login .direita1 {
+        background-color: #ffffff;
+        width: 100vh;
+        height: 100vh;
+        justify-content: end;
+        justify-content: space-around;
+        align-items: end;
+        padding-right: 0%;
+    }
+
+    .btn {
+        color: white;
+        width: 15vh;
+        height: 5vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        background-color: #000000;
+        font-weight: bold;
+        border-radius: 20px;
+        outline: 0%;
+        border: 0%;
+        padding-bottom: 25%;
+    }
+
+    .lugar-btn {
+        padding-left: 13%;
+        padding-top: 3%;
+        width: 60vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .bloco2 {
+        width: 20vh;
+        height: 30vh;
+        padding-top: 18%;
+        padding-left: 13%;
+    }
+}
+
+* body {
     margin: 0;
     background-color: #ffffff;
 }
 
 
-.login{
-    height: 600px;
-      display: flex;
-      justify-content: space-evenly;
-      font-family: "DM Sans", sans-serif;
-      font-size: 29px;
-}
-
-.login .direita1{
-background-color: #ffffff;
-width: 700px;
-height: 600px;
-justify-content: left;
-align-items: center;
-}
-
-.login .direita1 .direita2{
+.login {
+    height: 100vh;
     display: flex;
+    justify-content: space-evenly;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.8rem;
+}
+
+.login .direita1 {
+    background-color: #ffffff;
+    width: 100vh;
+    height: 100vh;
+    padding-left: 10%;
+    justify-content: flex-end;
+    align-items: end;
+    padding-right: 0%;
+}
+
+.login .direita1 .direita2 {
+    display: flex;
+    width: 100vh;
+    justify-content: center;
     align-items: center;
     justify-content: space-evenly;
-    padding-top: 9px;
-    padding-left: 250px;
+    padding-top: 3%;
+    /* padding-bottom: 5%; */
+    /* padding-left: 250px; */
 }
 
 
-.login .esquerda1{
-background-color: #c7d0d8;
-width: 645px;
-height: 615px;
-justify-content: center;
-align-items: center;
-padding-bottom: 30px;
-color: white;
+.login .esquerda1 {
+    background-color: #c7d0d8;
+    width: 140vh;
+    height: 100vh;
+    justify-content: center;
+    align-items: baseline;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    color: white;
 }
 
-.nome{
-    width: 590px;
-    height: 51px;
+.nome {
+    width: 40vh;
+    /* height: 7%; */
+    padding-top: 3%;
     display: flex;
     align-items: center;
-    padding-left: 35px;
+    padding-left: 2%;
 }
 
 .aa {
     text-decoration: none;
-    color:#31241E ;
+    color: #31241E;
     font-family: "DM Sans", sans-serif;
 }
 
 .ab {
     text-decoration: none;
-    color:#ffffff ;
+    color: #ffffff;
     font-family: "DM Sans", sans-serif;
     align-items: start;
 }
 
-  .inputs{
-    position:relative;
-    width: 400px;
-    padding:10px 10px;
-    border-radius:15px;
-    border: 0px;
+.inputs {
+    position: relative;
+    width: 60vh;
+    padding: 1.5vh 1.5vh;
+    border-radius: 15px;
+    border: 0vh;
     outline: none;
-    background:#c7d0d8;
-    color:rgb(82, 82, 82) ;
+    background: #c7d0d8;
+    color: rgb(82, 82, 82);
     font-weight: bold;
     font-size: 1.00rem;
-        
-    }
- 
-    .btn{
-        color:white;
-        width: 100px;
-        height: 35px;
-        justify-content: center;
-        align-items: center;
-        display:flex ;
-        background-color: #000000;
-        font-weight: bold;
-        border-radius: 20px;
-        outline: 0px;
-        border:0px;
-    }
 
-    .btn, p {
-        font-size: 15px;
-        margin-top: 7px;
-        margin-bottom: 0;
-    }
-    .btn:hover{
-        background-color: #292929;
-        box-shadow: 0px 0px 10px #292929;
-        transform: translate(0px, -5px);
-        transition:transform 0.5s;
-    }
+}
 
-    .lugar-btn{
-        padding-top: 120px;
-        padding-left: 300px;
-    }
+.btn {
+    color: white;
+    width: 15vh;
+    height: 5vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #000000;
+    font-weight: bold;
+    border-radius: 20px;
+    outline: 0%;
+    border: 0%;
+}
 
-    .lugar-btn2{
-        padding-top: 170px;
-        padding-left: 310px;
-    }
+.btn,
+p {
+    font-size: 0.9rem;
+    padding-top: 1%;
+    padding-bottom: 0;
+}
 
-    .bloco{
-        width: 300px;
-        height: 175px;
-        padding-top: 175px;
-        padding-left: 165px;
-    }
+.btn:hover {
+    background-color: #292929;
+    box-shadow: 0px 0px 10px #292929;
+    transform: translate(0px, -5px);
+    transition: transform 0.5s;
+}
 
-    .bloco2{
-        width: 300px;
-        height: 335px;
-      padding-top: 110px;
-      padding-left: 160px;
-    }
+.lugar-btn {
+    padding-left: 13%;
+    padding-top: 3%;
+    width: 60vh;
+    display: flex;
+    justify-content: center;
+}
 
-    .banner{
-        background-image: url(HardStock\(Preto\).png);
-        background-repeat: no-repeat;
-        height: 568px;
-        width: 570px;
-        color: rgb(0, 0, 0);
-        padding: 1px;
-        background-size: cover;
+.lugar-btn2 {
+    display: flex;
+    padding-top: 4%;
+    padding-left: 40%;
+    /* width:  100vh; */
+}
 
-    } 
- @media only screen and( max-width: 768px) {
+.bloco {
+    width: 75%;
+    height: 35vh;
+    padding-top: 25%;
+    padding-left: 15%;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    justify-content: center;
+}
 
-    #nav1{
+.bloco2 {
+    width: 60vh;
+    height: 50vh;
+    padding-top: 18%;
+    padding-left: 13%;
+    padding-bottom: 5%;
+}
+
+.banner {
+    background-image: url(HardStock\(Preto\).png);
+    background-repeat: no-repeat;
+    height: 80vh;
+    width: 100vh;
+    color: rgb(0, 0, 0);
+    padding: 1px;
+    background-size: cover;
+    align-items: center;
+
+}
+
+@media only screen and(max-width: 768px) {
+
+    #nav1 {
         /* background-color: blue; */
         /* width: 1%;  */
     }
-    }
+}
 
 
-    #nav1{
-        /* background-color: blue; */
-        /* width: 1%;  */
-    }
+#nav1 {
+    /* background-color: blue; */
+    /* width: 1%;  */
+}
