@@ -9,6 +9,7 @@ class Servidor(
 
 ) {
     var aumento: Int = 0
+    var retirada: Int = 0
 
     val historicoDeAcao = mutableListOf<String>()
 
@@ -24,6 +25,7 @@ class Servidor(
             CPU: $CPU
             Memoria base: $memoria
             Memoria adicionada: $aumento
+            Memoria retirada: $retirada
             ligado: $textoLigado
             Rede: $rede
             Disco: $disco
@@ -38,6 +40,17 @@ class Servidor(
             println("Voce aumentou: $aumento da sua memória que era de: $memoria ficando no final com: $memoriaFinal")
         }else{
             println("Desligue seu servidor para poder adicionar a memoria")
+        }
+    }
+
+    fun retirarMemoria(){
+        var  memoriaFinal2: Int = 0
+
+        if(ligado == false){
+            memoriaFinal2 = memoria - retirada
+            println("Voce retirou: $retirada da sua memória que era de: $memoria ficando no final com: $memoriaFinal2")
+        }else{
+            println("Desligue seu servidor para poder remover a memoria")
         }
     }
 
