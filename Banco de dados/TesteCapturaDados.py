@@ -13,6 +13,7 @@ while True:
         break
     else:
         while(a < 10):
+            print("----------CPU-----------")
             print(f"O porcentual de uso da CPU atualmente está em {psutil.cpu_percent(interval=2)}")
             a = a + 1
     # While para mostrar a velocidade atual da CPU a máxima e a minima
@@ -21,19 +22,20 @@ while True:
             cpu_times = psutil.cpu_times()
 # Retorna o tempo ativo da CPU em segundos tem que fazer a conversão depois
             tempoAtivo = cpu_times.user + cpu_times.system
-            print(f"O tempo ativo da cpu é {tempoAtivo:.2f}")
+            print(f"O tempo ativo da cpu é {tempoAtivo / 3600:.2f} hora(s)")
 
 # Retorna muitas informações sobre o tempo de uso da CPU
 #print(psutil.cpu_times(percpu=True))
 
             usoDisco = psutil.disk_usage('/')
+            print("----------DISCO----------")
 # Comando que retorna todas as métricas juntas
             print(usoDisco)
 
 # Comando que mostra o quanto do disco já foi utilizado
-            print(f"O disco rígido tem um total {usoDisco.total} GB")
-            print(f"já foi utilizado {usoDisco.used} do disco rígido")
-            print(f"Está disponível {usoDisco.free}GB do disco rígido")
+            print(f"O disco rígido tem um total {usoDisco.total / (1024**3):.2f} GB")
+            print(f"já foi utilizado {usoDisco.used / (1024**3):.2f} GB do disco rígido")
+            print(f"Está disponível {usoDisco.free / (1024**3):.2f} GB do disco rígido")
             print(f"Está sendo utilizado {usoDisco.percent}% do disco rígido")
 
 # Guardando numa variável os valores de velocidade de leitura,etc.
@@ -44,7 +46,7 @@ while True:
             print(f"O tempo total em milisegundos para gravação {io_counters.write_time}")
 
             net_io_counters = psutil.net_io_counters()
-
+            print("----------REDE----------")
             print(net_io_counters)
 
             print(f"O total de bytes enviados pela rede foi {net_io_counters.bytes_sent} KB/s")
@@ -54,12 +56,13 @@ while True:
 # Memória RAM
 
             mem = psutil.virtual_memory()
+            print("----------MEMÓRIA RAM----------")
             print(mem)
-
-            print(f"O total de memória ram é {mem.total}")
-            print(f"A quantidade de memória ram disponível é {mem.available}")
+            print(f"O total de memória ram é {mem.total / (1024**3):.2f} GB")
+            print(f"A quantidade de memória ram disponível é {mem.available / (1024**3):.2f} GB")
             print(f"O porcentual de uso da memória ram é {mem.percent}")
-            print(f"A quantidade de memória ram utlizada é {mem.used}")
+            print(f"A quantidade de memória ram utlizada é {mem.used / (1024**3):.2f} GB")
+            print("------------------------------------------------------------")
 
 # Fazendo conexões com o banco de dados
 
