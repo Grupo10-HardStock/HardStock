@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO</title>
+    <link rel="stylesheet" href='styleCadastroLogin.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+</head>
+<body>
+            <div class="login">
+            <div class="esquerda1">
+                <div class="nome"><a class="ab" href="SiteInst.html">HardStock</a></div>
+                <div class="banner"></div>
+            </div>
+            <div class="direita1">
+                <div class="direita2"><a class="aa" href="LOGIN.html">Login</a>
+                <b>Cadastro</b></div>
+                <div class="bloco2">
+                Nome:<input class="inputs" id="input_nome" type="text"><br>
+                E-mail:<input class="inputs" id="input_email" type="text"><br>
+                Senha:<input class="inputs" id="input_senha" type="password">
+                Confirmar_senha:<input class="inputs" id="input_confirmar" type="password"><br></div>
+                <div class="lugar-btn"><button onclick="cadastrar()" class="btn">Cadastrar</button></div>
+            </div>
+        </div>
+</body>
+</html>
+<script>
+
+function cadastrar(){
+var nome = input_nome.value
+var email = input_email.value
+var senha = input_senha.value
+var confirmar = input_confirmar.value
+var indice_arroba = email.indexOf('@')
+
+if (nome == '' || senha == '' || email == '' || confirmar == '') {
+
+    alert('Preencha todos os campos')
+    return false
+}
+
+if (senha.length < 8) {
+
+alert('Senha inválida')
+return false
+}
+
+
+if (senha != confirmar) {
+    
+    alert('Confirmação inválida')
+    return false
+}
+
+
+if (indice_arroba < 0) {
+
+alert('Está faltando o caracter especial "@" no email')
+return false
+}
+
+
+if ( email.length < 5) {
+
+alert('Seu email está muito curto')
+return false
+}
+
+
+window.location.href = "Login.html"
+return true
+
+
+}
+
+</script>
