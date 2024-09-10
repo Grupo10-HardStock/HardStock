@@ -1,4 +1,6 @@
 import psutil
+import time
+from datetime import datetime
 #from mysql.connector import connect, Error
 
 
@@ -12,11 +14,12 @@ while True:
     if resposta.lower() == 'sim':
         break
     else:
-        while(a < 10):
+        while(a < 5):
             print("----------CPU-----------")
             print(f"O porcentual de uso da CPU atualmente está em {psutil.cpu_percent(interval=2)}")
             a = a + 1
     # While para mostrar a velocidade atual da CPU a máxima e a minima
+    #Se estiver ruim pode comprometer tanto o desempenho como a longevidade
             print(f"A velocidade da CPU é {psutil.cpu_freq()}")
             
             cpu_times = psutil.cpu_times()
@@ -41,6 +44,7 @@ while True:
 # Guardando numa variável os valores de velocidade de leitura,etc.
             io_counters = psutil.disk_io_counters()
 
+            # Identificar possíveis problemas
             print(io_counters)
             print(f"O tempo total em milisegundos para leitura {io_counters.read_time}")
             print(f"O tempo total em milisegundos para gravação {io_counters.write_time}")
@@ -49,6 +53,7 @@ while True:
             print("----------REDE----------")
             print(net_io_counters)
 
+            # Prevenção de perda de dados
             print(f"O total de bytes enviados pela rede foi {net_io_counters.bytes_sent} KB/s")
             print(f"O total de bytes recebidos pela rede foi {net_io_counters.bytes_recv} KB/s")
 
@@ -58,12 +63,27 @@ while True:
             mem = psutil.virtual_memory()
             print("----------MEMÓRIA RAM----------")
             print(mem)
-            print(f"O total de memória ram é {mem.total / (1024**3):.2f} GB")
+            print(f"O total de memória ram é {mem.total / (1024**3):.2f} GB") 
             print(f"A quantidade de memória ram disponível é {mem.available / (1024**3):.2f} GB")
             print(f"O porcentual de uso da memória ram é {mem.percent}")
             print(f"A quantidade de memória ram utlizada é {mem.used / (1024**3):.2f} GB")
             print("------------------------------------------------------------")
 
+
+# Capturando o tempo
+
+data_hora = datetime.now()
+hora = data_hora.hour
+minuto = data_hora.minute
+seg = data_hora.second
+
+dia = data_hora.day
+mes = data_hora.month
+ano = data_hora.year
+data = [hora, minuto, seg, dia , mes, ano]
+
+print(f"{hora}:{minuto}:{seg} {dia}/{mes}/{ano}")
+    
 # Fazendo conexões com o banco de dados
 
 """config = {
