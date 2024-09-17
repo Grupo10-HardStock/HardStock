@@ -1,1 +1,0 @@
-scp -i HardStock.pem TesteCapturaDados.py ubuntu@Jogar o ip Público da instancia aqui dentro(IPV4 Público):~/

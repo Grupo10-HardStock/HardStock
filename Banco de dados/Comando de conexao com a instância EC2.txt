@@ -1,0 +1,1 @@
+scp -i HardStock.pem TesteCapturaDados.py ubuntu@IPV4 Público:~/

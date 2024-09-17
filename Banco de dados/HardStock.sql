@@ -1,58 +1,68 @@
 CREATE DATABASE HardStock;
-
 USE HardStock;
 
-CREATE TABLE Empresa(
+CREATE TABLE empresa(
 idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(45),
-CNPJ CHAR(18)
+nome VARCHAR(45) not null,
+email varchar(45) not null,
+cnpj CHAR(18) not null
 );
 
-CREATE TABLE Funcionario(
+CREATE TABLE funcionario(
 idFuncionario INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(45),
-email VARCHAR(256),
-senha VARCHAR(45),
-CPF Char(14),
+nome VARCHAR(45) not null,
+email VARCHAR(45) not null,
+senha VARCHAR(255) not null,
+cargo VARCHAR(45) not null,
 fkEmpresa int,
 CONSTRAINT fkFuncionarioEmpresa FOREIGN KEY(fkEmpresa)
-	REFERENCES Empresa(idEmpresa)
+	REFERENCES empresa(idEmpresa)
 );
 
-CREATE TABLE Computador(
-idComputador INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(45),
+CREATE TABLE servidor(
+idServidor INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(45) not null,
 fkEmpresa int,
-CONSTRAINT fkComputadorEmpresa FOREIGN KEY(fkEmpresa)
-	REFERENCES Empresa(idEmpresa)
+CONSTRAINT fkComputadorEmpresa FOREIGN KEY(fkEmpresa) REFERENCES empresa(idEmpresa)
 );
 
-CREATE TABLE Componente(
+CREATE TABLE componente(
 idComponente INT PRIMARY KEY AUTO_INCREMENT,
-nomeComponente VARCHAR(45),
-unidadeMedida VARCHAR(45)
+nomeComponente VARCHAR(45) not null,
+unidadeMedida VARCHAR(45) not null
 );
 
-CREATE TABLE ComponenteComputador (
-fkComputador INT,
+CREATE TABLE captura (
+fkServidor INT,
 fkComponente INT,
-CONSTRAINT fkComputadorComponente FOREIGN KEY (fkComputador)
-	REFERENCES Computador (idComputador),
-CONSTRAINT fkComponenteComputador FOREIGN KEY (fkComponente)
-        REFERENCES Componente (idComponente),
-PRIMARY KEY (fkComputador , fkComponente)
+registro VARCHAR(255) not null,
+dtHora DATETIME not null,
+CONSTRAINT fkServidorComponente FOREIGN KEY (fkServidor) REFERENCES servidor (idServidor),
+CONSTRAINT fkComponenteServidor FOREIGN KEY (fkComponente) REFERENCES componente (idComponente),
+PRIMARY KEY (fkServidor, fkComponente)
 );
 
-CREATE TABLE Dados (
-idDados INT PRIMARY KEY AUTO_INCREMENT,
-registro VARCHAR(45),
-hora VARCHAR(45),
+CREATE TABLE alerta (
+idAlerta INT,
 fkComponente INT,
-fkComputador INT,
-CONSTRAINT fkDadosComponente FOREIGN KEY (fkComponente)
-	REFERENCES ComponenteComputador (fkComponente),
-CONSTRAINT fkDadosComputador FOREIGN KEY (fkComputador)
-	REFERENCES ComponenteComputador (fkComputador)
+fkServidor INT,
+CONSTRAINT fkServidorAlerta FOREIGN KEY (fkServidor) REFERENCES servidor (idServidor),
+CONSTRAINT fkComponenteAlerta FOREIGN KEY (fkComponente) REFERENCES componente (idComponente),
+PRIMARY KEY (idAlerta, fkComponente, fkServidor)
+);
+
+CREATE TABLE relatório (
+idRelatorio INT PRIMARY KEY AUTO_INCREMENT,
+descricao VARCHAR(255) not null,
+destinatario VARCHAR(45) not null,
+fkCaptura INT,
+fkComponente INT,
+fkServidor INT,
+
+CONSTRAINT fkCapturaRelatorio FOREIGN KEY (fkCaptura) REFERENCES captura (idCaptura),
+CONSTRAINT fkComponenteRelatorio FOREIGN KEY (fkComponente) REFERENCES componente (idComponente),
+CONSTRAINT fkServidorRelatorio FOREIGN KEY (fkServidor) REFERENCES servidor (idServidor),
+PRIMARY KEY (idRelatorio, fkCaptura, fkComponente, fkServidor)
 );
 
 INSERT INTO Componente(nomeComponente, unidadeMedida)
