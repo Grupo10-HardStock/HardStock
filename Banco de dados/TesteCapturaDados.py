@@ -15,6 +15,21 @@ while True:
         break
     else:
         while(a < 5):
+            
+# Capturando o tempo
+
+            data_hora = datetime.now()
+            hora = data_hora.hour
+            minuto = data_hora.minute
+            seg = data_hora.second
+    
+            dia = data_hora.day
+            mes = data_hora.month
+            ano = data_hora.year
+            data = [hora, minuto, seg, dia , mes, ano]
+
+            print(f"O horário da captura é {hora}:{minuto}:{seg} {dia}/{mes}/{ano}")
+    
             print("----------CPU-----------")
             print(f"O porcentual de uso da CPU atualmente está em {psutil.cpu_percent(interval=2)}")
             a = a + 1
@@ -69,21 +84,6 @@ while True:
             print(f"A quantidade de memória ram utlizada é {mem.used / (1024**3):.2f} GB")
             print("------------------------------------------------------------")
 
-
-# Capturando o tempo
-
-data_hora = datetime.now()
-hora = data_hora.hour
-minuto = data_hora.minute
-seg = data_hora.second
-
-dia = data_hora.day
-mes = data_hora.month
-ano = data_hora.year
-data = [hora, minuto, seg, dia , mes, ano]
-
-print(f"{hora}:{minuto}:{seg} {dia}/{mes}/{ano}")
-    
 # Fazendo conexões com o banco de dados
 
 """config = {
