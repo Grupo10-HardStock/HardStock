@@ -44,15 +44,15 @@ fun main() {
     print("Informe a quantidade de núcleos da sua CPU: ");
     computador2.setNucleosCpus(snNumero.nextInt());
 
-    print("Informe a quantidade de armazenamento: ");
+    print("Informe a quantidade de Mémoria Ram(GB): ");
     computador2.setArmazenamento(snNumero.nextInt());
 
-    print("Informe a quantidade de armazenamento do disco: ");
+    print("Informe a quantidade de armazenamento do disco rígido(GB): ");
     computador2.setDisco(snNumero.nextInt());
     println("----------------------------------")
     println(computador2.detalhes());
 
-    print("Informe a quantidade de armazenamento utilizado: ");
+    print("Informe a quantidade de armazenamento utilizado(GB): ");
     println("A Quantidade de armazenamento disponível é ${computador2.calcularArmazenamento(snNumero.nextDouble())} GB");
     Thread.sleep(3000);
 

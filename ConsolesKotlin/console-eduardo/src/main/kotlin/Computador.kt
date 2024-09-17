@@ -8,7 +8,7 @@ class Computador(private var teclado: Boolean = false, private var mouse: Boolea
     private var qtdNucleosCpus: Int = 0;
     private var qtdArmazenamento: Int = 0;
     private var qtdDisco: Int = 0;
-    private var ligado: Boolean = false;
+    private var ligado: Boolean = true;
 
     private var listaAplicativos = mutableListOf<String>();
 
