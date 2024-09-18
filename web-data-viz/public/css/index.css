@@ -4,14 +4,110 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'DM Sans', 'Segoe UI', sans-serif
+    font-family: system-ui, sans-serif
 }
 
-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+@media(min-width: 1000px){
+    #header {
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        transition: ease 1s;
+    }
+    
+    #header.rolagem{
+        background-color: #000000;
+        padding: 5px 1%;
+    }
+    #mobile_btn{
+        display: none;
+    }
+    
+    #mobile_menu{
+        display: none;
+    }
+}
+
+
+@media (max-width: 999px){
+    .textoBotao{
+        display: none;
+    }
+
+    .nav a{
+        display: none;
+    }
+
+    .nav img{
+        display: none;
+    }
+
+    #header{
+    background-color: #000;
     width: 100%;
+    position: fixed;
+    }
+
+    #mobile_btn{
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1;
+        transition: ease 1s; 
+        color: #fff;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+    }
+
+    #mobile_menu {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        opacity: 0; 
+        height: 0; 
+        background-color: transparent;
+        width: 100%;
+        width: 100vw;
+    }
+
+    #mobile_menu.active{
+        opacity: 1;
+        display: flex;
+        position: fixed;
+        transition: 1s;
+        width: 100%;
+        height: 20vh;
+        justify-content: center;
+        background-color: #000;
+    }
+
+    #mobile_nav_list{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 15px;
+    }
+
+    #mobile_nav_list a{
+        text-decoration: none;
+        margin-left: 15px;
+        color: #fff;
+        letter-spacing: 3px;
+    }
+
+    #mobile_nav_list .nav_item{
+        list-style: none;
+        text-align: center;
+    }
+
+    #mobile_menu.active #mobile_nav_list {
+        display: flex; 
+        opacity: 1; 
+        height: auto; 
+    }
 }
 
 .home {
@@ -25,13 +121,26 @@ header {
 }
 
 /* HEADER */
-.nav {
+.nav-logo {
     height: 90px;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     gap: 1rem;
-    padding: 0 1rem 0 0;
+    letter-spacing: 2px;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    letter-spacing: 2px;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-inline: 55px;
 }
 
 .nav img {
@@ -53,16 +162,10 @@ header {
 }
 
 .textoBotao {
-    display: flex;
-    align-items: center;
-    height: 500px;
-    width: 500px;
-    flex-direction: column;
-}
-
-.txt {
-    display: flex;
-    text-align: center;
+    height: 48%;
+    width: 30%;
+    backdrop-filter: blur(3px);
+    margin-top: 8%;
 }
 
 .botao {
