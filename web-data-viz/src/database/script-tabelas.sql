@@ -6,57 +6,80 @@
 comandos para mysql server
 */
 
-CREATE DATABASE aquatech;
+CREATE DATABASE HardStock;
+USE HardStock;
 
-USE aquatech;
-
-CREATE TABLE empresa (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	razao_social VARCHAR(50),
-	cnpj CHAR(14),
-	codigo_ativacao VARCHAR(50)
+CREATE TABLE empresa(
+    idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(45) NOT NULL,
+	cnpj CHAR(18) NOT NULL, 
+    email VARCHAR(80) NOT NULL,
+    Senha VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+select * from empresa;
+
+
+CREATE TABLE funcionario(
+    idFuncionario INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(45) NOT NULL,
+    email VARCHAR(45) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    cargo VARCHAR(45) NOT NULL,
+    fkEmpresa INT,
+    CONSTRAINT fkFuncionarioEmpresa FOREIGN KEY(fkEmpresa)
+        REFERENCES empresa(idEmpresa)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+CREATE TABLE servidor(
+    idServidor INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(45) NOT NULL,
+    fkEmpresa INT,
+    CONSTRAINT fkComputadorEmpresa FOREIGN KEY(fkEmpresa) REFERENCES empresa(idEmpresa)
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+CREATE TABLE componente(
+    idComponente INT PRIMARY KEY AUTO_INCREMENT,
+    nomeComponente VARCHAR(45) NOT NULL,
+    unidadeMedida VARCHAR(45) NOT NULL
 );
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
+CREATE TABLE captura (
+    fkServidor INT,
+    fkComponente INT,
+    registro VARCHAR(255) NOT NULL,
+    dtHora DATETIME NOT NULL,
+    CONSTRAINT fkServidorComponente FOREIGN KEY (fkServidor) REFERENCES servidor (idServidor),
+    CONSTRAINT fkComponenteServidor FOREIGN KEY (fkComponente) REFERENCES componente (idComponente),
+    PRIMARY KEY (fkServidor, fkComponente, dtHora)
 );
 
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B');
-insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Peixe-dourado', 2);
+CREATE TABLE alerta (
+    idAlerta INT PRIMARY KEY AUTO_INCREMENT,
+    fkComponente INT,
+    fkServidor INT,
+    CONSTRAINT fkServidorAlerta FOREIGN KEY (fkServidor) REFERENCES servidor (idServidor),
+    CONSTRAINT fkComponenteAlerta FOREIGN KEY (fkComponente) REFERENCES componente (idComponente)
+);
+
+CREATE TABLE relatorio (
+    idRelatorio INT PRIMARY KEY AUTO_INCREMENT,
+    descricao VARCHAR(255) NOT NULL,
+    destinatario VARCHAR(45) NOT NULL,
+    fkServidor INT,
+    fkComponente INT,
+    dtHora DATETIME NOT NULL,
+    CONSTRAINT fkServidorRelatorio FOREIGN KEY (fkServidor) REFERENCES servidor (idServidor),
+    CONSTRAINT fkComponenteRelatorio FOREIGN KEY (fkComponente) REFERENCES componente (idComponente),
+    CONSTRAINT fkCapturaRelatorio FOREIGN KEY (fkServidor, fkComponente, dtHora) REFERENCES captura (fkServidor, fkComponente, dtHora)
+);
+
+-- Inserção de componentes
+INSERT INTO componente(nomeComponente, unidadeMedida)
+VALUES ("CPU", "Porcentagem"), 
+       ("Disco", "Porcentagem"), 
+       ("Rede", "KB/s"), 
+       ("Memória", "Porcentagem");
+
+-- Verificação de componentes inseridos
+SELECT * FROM componente;
