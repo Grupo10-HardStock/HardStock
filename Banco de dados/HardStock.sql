@@ -2,10 +2,11 @@ CREATE DATABASE HardStock;
 USE HardStock;
 
 CREATE TABLE empresa(
-idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(45) not null,
-email varchar(45) not null,
-cnpj CHAR(18) not null
+    idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(45) NOT NULL,
+	cnpj CHAR(18) NOT NULL, 
+    email VARCHAR(80) NOT NULL,
+    Senha VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE funcionario(

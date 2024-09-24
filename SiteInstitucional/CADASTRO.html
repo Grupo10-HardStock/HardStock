@@ -21,6 +21,7 @@
                 <b>Cadastro</b></div>
                 <div class="bloco2">
                 Nome:<input class="inputs" id="input_nome" type="text"><br>
+                CNPJ:<input class="inputs" id="input_email" type="text"><br>
                 E-mail:<input class="inputs" id="input_email" type="text"><br>
                 Senha:<input class="inputs" id="input_senha" type="password">
                 Confirmar_senha:<input class="inputs" id="input_confirmar" type="password"><br></div>
@@ -31,51 +32,92 @@
 </html>
 <script>
 
-function cadastrar(){
-var nome = input_nome.value
-var email = input_email.value
-var senha = input_senha.value
-var confirmar = input_confirmar.value
-var indice_arroba = email.indexOf('@')
+function cadastrar() {
+    aguardar();
 
-if (nome == '' || senha == '' || email == '' || confirmar == '') {
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var empresaVar = listaEmpresas.value
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == "" ||
+      empresaVar == ""
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Mensagem de erro para todos os campos em branco)";
 
-    alert('Preencha todos os campos')
-    return false
-}
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
 
-if (senha.length < 8) {
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        empresaServer: empresaVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
 
-alert('Senha inválida')
-return false
-}
+        if (resposta.ok) {
+          cardErro.style.display = "block";
 
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
-if (senha != confirmar) {
-    
-    alert('Confirmação inválida')
-    return false
-}
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
 
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
 
-if (indice_arroba < 0) {
+    return false;
+  }
 
-alert('Está faltando o caracter especial "@" no email')
-return false
-}
+  function listar() {
+    fetch("/empresas/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((empresa) => {
+            listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }
 
-
-if ( email.length < 5) {
-
-alert('Seu email está muito curto')
-return false
-}
-
-
-window.location.href = "Login.html"
-return true
-
-
-}
-
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
 </script>
