@@ -4,32 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
-    <link rel="stylesheet" href='styleCadastroLogin.css'>
+    <title>HardStock | Login</title>
+    <link rel="stylesheet" href='../css/style.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200..1000&display=swap"
         rel="stylesheet">
 </head>
 </head>
 
 <body>
-    <div class="login">
-        <div class="esquerda1">
-            <div class="nome"><a class="ab" href="index.html">HardStock</a></div>
-            <div class="banner"></div>
+    <div class="content">
+        <div class="background">
+            <img class="img" src="../assets/imgs/HardStock - branco.png" alt="Logo Marca">
+            <img class="img2" src="../assets/imgs/HardStock(Preto).png" alt="Logo Marca">
         </div>
-        <div class="direita1">
-            <div class="direita2"><b>Login</b>
-                <a class="aa" href="CADASTRO.html">Cadastro</a>
+        <div class="contentItens">
+            <h3>SEJA BEM VINDO!</h3>
+            <h1>Insira seus dados para continuar:</h1>
+            <div>
+                <label for="input_nome">
+                    <span>Nome</span>
+                    <input type="text" id="input_nome">
+                    <p id="alertNome"></p>
+                </label>
+                <label for="input_email">
+                    <span>Email</span>
+                    <input type="text" id="input_email">
+                    <p id="alertEmail"></p>
+                </label>
+                <a href="cadastro.html">Ainda não tem cadastro?</a>
+                <div class="ctBtn">
+                    <button id="btn-cancelar" class="btn">Cancelar</button>
+                    <button id="btn-proximo" onclick="entrar()" class="btn">Login</button>
+                </div>
             </div>
-            <div class="bloco">
-                E-mail:<input class="inputs" id="input_email" type="text"><br>
-                Senha:<input class="inputs" id="input_senha" type="password"></div>
-            <div class="lugar-btn2"><button onclick="entrar()" class="btn">Entrar</button></div>
         </div>
-    </div>
 </body>
 
 </html>
@@ -44,17 +54,14 @@
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            // finalizarAguardar();
             return false;
         }
-            
 
         if (emailVar == '') {
 
             alert('Digite seu email')
 
-        } 
+        }
         if (senhaVar == '') {
 
             alert('Digite sua senha')
