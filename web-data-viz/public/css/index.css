@@ -163,7 +163,7 @@
 
 .textoBotao {
     height: 48%;
-    width: 30%;
+    width: 40%;
     backdrop-filter: blur(3px);
     margin-top: 8%;
 }
@@ -176,7 +176,7 @@
 
 .textoBotao span {
     color: white;
-    font-size: 4.8rem;
+    font-size: 10dvh;
     text-decoration: none;
     text-align: left;
 
