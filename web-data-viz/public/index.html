@@ -1,62 +1,140 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Cadastro</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 300px;
-        }
-        .logo {
-            width: 100px;
-            margin-bottom: 20px;
-        }
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>HardStock</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="assets/icon/HardStock-preto.png" type="image/x-icon">
 </head>
+
 <body>
-    <div class="container">
-        <img src="logo.png" alt="Logo" class="logo">
-        <form>
-            <input type="text" placeholder="Nome" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Senha" required>
-            <button type="submit">Cadastrar</button>
-        </form>
+
+    <div class="home">
+        <header id="header">
+            <div class="nav">
+                <div class="nav-logo">
+                    <img src="assets/icon/HardStock - branco.png" alt="">
+                    <a href="">HardStock</a>
+                </div>
+                <div class="nav-list">
+                    <a href="./html/login.html">Login</a>
+                    <a href="./html/cadastro.html">Cadastro</a>
+                </div>
+            </div>
+
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div id="mobile_menu">
+                <ul id="mobile_nav_list">
+                    <li class="nav-item"><a href="./html/login.html">LOGIN</a></li>
+                    <li class="nav-item"><a href="./html/cadastro.html">CADASTRO</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="inicio">
+            <div class="textoBotao">
+                    <span>
+                        Um futuro<br><b>mais seguro</b><br> conosco
+                    </span>
+                <!-- <div class="botao">
+                    <a href=""><b>saiba mais</b></a>
+                </div> -->
+            </div>
+        </div>
     </div>
+
+    <!-- SEÇÃO 2 -->
+    <div class="nossaSolucao">
+        <div class="aside">
+
+            <span class="titulo">
+                <b>Nossa solução</b>
+            </span>
+
+            <div class="contexto">
+
+                <div class="contextoTxt">
+                    <h6>A HardStock oferece para seus clientes o melhor sistema de monitoramento de hardware </h6>
+                </div>
+
+                <div class="botao">
+                    <a href="saibamais.html"><b>saiba mais</b></a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="bside">
+            <figure class="imagem"> </figure>
+        </div>
+    </div>
+
+    <!-- SEÇÃO 3 -->
+    <div class="section_porque">
+
+        <div class="titulo_porque">
+            <h6> Por que a HardStock? </h6>
+        </div>
+
+        <div class="container_porques">
+
+            <figure class="porque_box foto"> </figure>
+
+            <div class="porque_box">
+                <h6>Garanta a eficiência e a segurança dos seus sistemas com a HardStock, líder em monitoramento de
+                    hardware. Evite falhas inesperadas, reduza custos com manutenção e proteja seus dados críticos
+                    com nossa tecnologia avançada.</h6>
+            </div>
+
+            <div class="porque_box">
+                <h6>A HardStock proporciona uma análise detalhada sobre seus sistemas, monitorando e garantindo
+                    durabilidade e desempenho. Além disso, estamos sempre pensando em novas atualizações para sua melhor
+                    experiência.</h6>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- SEÇÃO 4 -->
+
+    <div class="section_equipe">
+        <!-- <div class="titulo_equipe"> Nossa equipe </div>
+        <div class="container_equipe">
+            <img src="assets/imgs/equipe/foto-eduardo.jpg" alt="Eduardo Miyasaki"
+                onclick="window.location.href='https://github.com/EduardoMiyasaki'">
+            <img src="assets/imgs/equipe/foto-izabelle.jpg" alt="Izabelle Figueiredo"
+                onclick="window.location.href='https://github.com/izabelleFigueiredo'">
+            <img src="assets/imgs/equipe/foto-matheus.jpg" alt="Matheus Fermoselle"
+                onclick="window.location.href='https://github.com/MatheusFermoselle'">
+            <img src="assets/imgs/equipe/foto-antunes.jpg" alt="Pedro Pinho"
+                onclick="window.location.href='https://github.com/Pedro01pinho'">
+            <img src="assets/imgs/equipe/foto-porfírio.jpg" alt="Pedro Porfírio"
+                onclick="window.location.href='https://github.com/PedroPorfirioV'">
+            <img src="assets/imgs/equipe/foto-ruan.jpg" alt="Ruan"
+                onclick="window.location.href='https://github.com/RS9FDC'">
+        </div> -->
+    </div>
+
+    <footer>
+        <div class="esquerda">
+            <img src="assets/imgs/github.png" alt="GitHub do projeto">
+            <h5>SPTECH</h5>
+        </div>
+
+        <div class="direita">
+            <h5>Construindo os negócios de amanhã. </h5>
+        </div>
+
+    </footer>
 </body>
+
 </html>
+<script src="./script/mobile.js"></script>
