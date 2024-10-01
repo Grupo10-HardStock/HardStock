@@ -7,134 +7,99 @@
     <title>HardStock</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="shortcut icon" href="assets/icon/HardStock-preto.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/icon/HardStock-preto.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../script/mobile.js"></script>
 </head>
 
 <body>
-
-    <div class="home">
-        <header id="header">
-            <div class="nav">
-                <div class="nav-logo">
-                    <img src="assets/icon/HardStock - branco.png" alt="">
-                    <a href="">HardStock</a>
-                </div>
-                <div class="nav-list">
+    <header id="header">
+        <div class="nav">
+            <div class="nav-list">
+                <a href="">HardStock</a>
+                <div class="nav-log">
                     <a href="./html/login.html">Login</a>
                     <a href="./html/cadastro.html">Cadastro</a>
                 </div>
             </div>
-
-            <button id="mobile_btn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
-            <div id="mobile_menu">
-                <ul id="mobile_nav_list">
-                    <li class="nav-item"><a href="./html/login.html">LOGIN</a></li>
-                    <li class="nav-item"><a href="./html/cadastro.html">CADASTRO</a></li>
-                </ul>
-            </div>
-        </header>
-
-        <div class="inicio">
-            <div class="textoBotao">
-                    <span>
-                        Um futuro<br><b>mais seguro</b><br> conosco
-                    </span>
-                <!-- <div class="botao">
-                    <a href=""><b>saiba mais</b></a>
-                </div> -->
-            </div>
         </div>
-    </div>
+
+        <button id="mobile_btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item"><a href="./html/login.html">LOGIN</a></li>
+                <li class="nav-item"><a href="./html/cadastro.html">CADASTRO</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="hero-text">
+            <p>Construindo negócios de um <span>futuro</span> melhor</p>
+        </div>
+        <img src="../assets/imgs/HardStock - branco.png">
+    </main>
 
     <!-- SEÇÃO 2 -->
-    <div class="nossaSolucao">
-        <div class="aside">
+    <div class="container-solution">
+        <h1>Solução HardStock</h1>
 
-            <span class="titulo">
-                <b>Nossa solução</b>
-            </span>
-
-            <div class="contexto">
-
-                <div class="contextoTxt">
-                    <h6>A HardStock oferece para seus clientes o melhor sistema de monitoramento de hardware </h6>
-                </div>
-
-                <div class="botao">
-                    <a href="saibamais.html"><b>saiba mais</b></a>
-                </div>
-
+        <div class="solution-side">
+            <div class="side"  onclick="context()">
+                <img src="../assets/icon/contexto.png">
+                <p>Contexto</p>
             </div>
 
-        </div>
-        <div class="bside">
-            <figure class="imagem"> </figure>
+            <div class="side" onclick="problem()">
+                <img src="../assets/icon/problema.png">
+                <p>Problema</p>
+            </div>
+
+            <div class="side" onclick="advantage()">
+                <img src="../assets/icon/vantagens.png">
+                <p>Vantagem</p>
+            </div>
         </div>
     </div>
 
     <!-- SEÇÃO 3 -->
-    <div class="section_porque">
+    <div class="container-why">
+        <h1> Por que a HardStock? </h1>
+            <div class="boxes-why">
+                <div class="card-why">
+                    <p>Garanta a eficiência e a segurança dos seus sistemas com a HardStock, líder em monitoramento de
+                        hardware. Evite falhas inesperadas, reduza custos com manutenção e proteja seus dados críticos
+                        com nossa tecnologia avançada.</p>
+                </div>
 
-        <div class="titulo_porque">
-            <h6> Por que a HardStock? </h6>
-        </div>
-
-        <div class="container_porques">
-
-            <figure class="porque_box foto"> </figure>
-
-            <div class="porque_box">
-                <h6>Garanta a eficiência e a segurança dos seus sistemas com a HardStock, líder em monitoramento de
-                    hardware. Evite falhas inesperadas, reduza custos com manutenção e proteja seus dados críticos
-                    com nossa tecnologia avançada.</h6>
+                <div class="card-why">
+                    <p>A HardStock proporciona uma análise detalhada sobre seus sistemas, monitorando e garantindo
+                        durabilidade e desempenho. Além disso, estamos sempre pensando em novas atualizações para sua
+                        melhor
+                        experiência.</p>
+                </div>
             </div>
-
-            <div class="porque_box">
-                <h6>A HardStock proporciona uma análise detalhada sobre seus sistemas, monitorando e garantindo
-                    durabilidade e desempenho. Além disso, estamos sempre pensando em novas atualizações para sua melhor
-                    experiência.</h6>
-            </div>
-
-        </div>
     </div>
 
-    <!-- SEÇÃO 4 -->
-
-    <div class="section_equipe">
-        <!-- <div class="titulo_equipe"> Nossa equipe </div>
-        <div class="container_equipe">
-            <img src="assets/imgs/equipe/foto-eduardo.jpg" alt="Eduardo Miyasaki"
-                onclick="window.location.href='https://github.com/EduardoMiyasaki'">
-            <img src="assets/imgs/equipe/foto-izabelle.jpg" alt="Izabelle Figueiredo"
-                onclick="window.location.href='https://github.com/izabelleFigueiredo'">
-            <img src="assets/imgs/equipe/foto-matheus.jpg" alt="Matheus Fermoselle"
-                onclick="window.location.href='https://github.com/MatheusFermoselle'">
-            <img src="assets/imgs/equipe/foto-antunes.jpg" alt="Pedro Pinho"
-                onclick="window.location.href='https://github.com/Pedro01pinho'">
-            <img src="assets/imgs/equipe/foto-porfírio.jpg" alt="Pedro Porfírio"
-                onclick="window.location.href='https://github.com/PedroPorfirioV'">
-            <img src="assets/imgs/equipe/foto-ruan.jpg" alt="Ruan"
-                onclick="window.location.href='https://github.com/RS9FDC'">
-        </div> -->
-    </div>
-
-    <footer>
-        <div class="esquerda">
-            <img src="assets/imgs/github.png" alt="GitHub do projeto">
-            <h5>SPTECH</h5>
+    <footer class="footer">
+        <div>
+            <img src="../assets/imgs/github.png" alt="GitHub do projeto">
+            <p>SPTech</p>
         </div>
 
-        <div class="direita">
-            <h5>Construindo os negócios de amanhã. </h5>
+        <div>
+            <p>copyrigth &copy; 2024 HardStock</p>
         </div>
-
     </footer>
 </body>
 
 </html>
-<script src="./script/mobile.js"></script>

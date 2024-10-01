@@ -7,55 +7,51 @@
     font-family: system-ui, sans-serif
 }
 
-@media(min-width: 1000px){
+/* --------------------------------------------------HEADER --------------------------------------------*/
+@media(min-width: 1000px) {
     #header {
         position: fixed;
         z-index: 1;
         width: 100%;
-        transition: ease 1s;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px 4%;
+        /* transition: ease 1s; */
     }
-    
-    #header.rolagem{
-        background-color: #000000;
-        padding: 5px 1%;
-    }
-    #mobile_btn{
+
+    /* #header.rolagem {
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px 4%;
+    } */
+
+    #mobile_btn {
         display: none;
     }
-    
-    #mobile_menu{
+
+    #mobile_menu {
         display: none;
     }
 }
 
 
-@media (max-width: 999px){
-    .textoBotao{
+@media (max-width: 999px) {
+    .nav a {
         display: none;
     }
 
-    .nav a{
-        display: none;
+    #header {
+        background-color: #000;
+        width: 100%;
+        position: fixed;
     }
 
-    .nav img{
-        display: none;
-    }
-
-    #header{
-    background-color: #000;
-    width: 100%;
-    position: fixed;
-    }
-
-    #mobile_btn{
+    #mobile_btn {
         display: block;
         border: none;
         background-color: transparent;
         font-size: 1.5rem;
         cursor: pointer;
         z-index: 1;
-        transition: ease 1s; 
+        transition: ease 1s;
         color: #fff;
         position: absolute;
         top: 30px;
@@ -66,420 +62,305 @@
         display: flex;
         flex-direction: column;
         align-items: start;
-        opacity: 0; 
-        height: 0; 
+        opacity: 0;
+        height: 0;
         background-color: transparent;
         width: 100%;
-        width: 100vw;
     }
 
-    #mobile_menu.active{
+    #mobile_menu.active {
         opacity: 1;
         display: flex;
         position: fixed;
         transition: 1s;
-        width: 100%;
         height: 20vh;
+        background-color: rgba(0, 0, 0, 0.7);
         justify-content: center;
-        background-color: #000;
+        align-items: center;
     }
 
-    #mobile_nav_list{
+    #mobile_nav_list {
         display: flex;
         flex-direction: column;
         list-style: none;
         gap: 15px;
     }
 
-    #mobile_nav_list a{
+    #mobile_nav_list a {
         text-decoration: none;
         margin-left: 15px;
         color: #fff;
         letter-spacing: 3px;
     }
 
-    #mobile_nav_list .nav_item{
+    #mobile_nav_list .nav_item {
         list-style: none;
         text-align: center;
     }
 
     #mobile_menu.active #mobile_nav_list {
-        display: flex; 
-        opacity: 1; 
-        height: auto; 
+        display: flex;
+        opacity: 1;
+        height: auto;
     }
 }
 
-.home {
-    height: 100vh;
-    width: 100%;
-    background-image: url(../assets/imgs/backgroundPredio.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: rgb(0, 0, 0);
-}
 
-/* HEADER */
-.nav-logo {
-    height: 90px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    letter-spacing: 2px;
-}
 
-.nav-list{
-    display: flex;
-    align-items: center;
-    gap: 5rem;
-    letter-spacing: 2px;
-}
+/* ------------------------------------------SEÇÃO 1--------------------------------------------- */
 
-.nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.nav {
     margin-inline: 55px;
 }
 
-.nav img {
-    height: 100%;
-}
-
-.nav a {
-    color: white;
-    font-size: 1.8rem;
-    text-decoration: none;
-}
-
-/* SEÇÃO 1 */
-
-.inicio {
+.nav-list {
     display: flex;
-    height: 100vh;
-    padding: 7%;
-}
-
-.textoBotao {
-    height: 48%;
-    width: 40%;
-    backdrop-filter: blur(3px);
-    margin-top: 8%;
-}
-
-.botao {
-    display: flex;
-    justify-content: left;
-    padding: 2%;
-}
-
-.textoBotao span {
-    color: white;
-    font-size: 10dvh;
-    text-decoration: none;
-    text-align: left;
-
-}
-
-.botao a {
-    color: black;
-    font-size: 1.6rem;
-    text-decoration: none;
-    text-align: center;
-    justify-content: left;
-    padding: 2%;
-    width: 350px;
-    border-radius: 30px;
-    background-color: white;
-}
-
-/* SEÇÃO 2 */
-
-.nossaSolucao {
-    height: 100vh;
-    width: 100%;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 9%;
-    flex-direction: row;
-}
-
-.aside {
-    height: 100%;
-    width: 50%;
-    display: flex;
-    align-items: left;
-    flex-direction: column;
-}
-
-.titulo {
-    color: white;
-    font-size: 3.5rem;
-}
-
-.contexto {
-    color: white;
-    padding: 2% 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.contextoTxt {
-    display: flex;
-    text-align: start;
-    padding: 2rem 0;
-    width: 70%;
-}
-
-.contextoTxt h6 {
-    font-size: clamp(1.8rem, 2.6vw, 2.6rem);
-    font-weight: 300;
-}
-
-
-.aside a {
-    color: black;
-    font-size: 1rem;
-    text-decoration: none;
-    text-align: center;
-    width: 18.75rem;
-    border-radius: 30px;
-    background-color: white;
-}
-
-.bside {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 100%;
-    width: 60%;
-}
-
-.imagem {
-    width: 100%;
-    height: 100%;
-    border-radius: 5%;
-    background-image: url(../assets/imgs/acoes.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-/* SEÇÃO 3 */
-
-.section_porque {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.titulo_porque {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 2rem;
-    text-align: center;
-}
-
-.titulo_porque h6 {
-    font-size: 3.5rem;
-}
-
-.container_porques {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 5%;
-}
-
-.porque_box {
-    display: flex;
-    align-items: center;
-    background-color: #c7d0d8;
-    width: 30%;
-    border-radius: 3rem;
-    font-size: clamp(1.5rem, 2.6vw, 2.6rem);    
-    padding: 1.5%;
-    box-sizing: border-box;
-    overflow: hidden;
-    word-wrap: break-word;
-    word-spacing: 0.7rem;
-    line-height: 1.4;
-    box-shadow: #0000003e 0 0 8px 0px;
-}
-
-.porque_box h6 {
-    font-weight: 500;
-    padding: .5rem;
-}
-
-.foto {
-    border-radius: 10%;
-    background-image: url(../assets/imgs/teamwork.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-/* SEÇÃO 4 */
-
-.section_equipe {
-    display: flex;
-    flex-direction: column;
-    background-color: #c7d0d8;
-    height: 100vh;
-    width: 100%;
-    align-items: center;
-}
-
-.titulo_equipe {
-    display: flex;
-    justify-content: center;
-    font-size: 4.5rem;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: flex-end;
-    padding: 1% 3% 0;
-}
-
-.container_equipe {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    align-content: center;
-    justify-items: center;
-    width: 100%;
-    height: 100%;
-    row-gap: 4rem;
-    column-gap: 7rem;
-    padding: 0 8%;
-}
-
-
-.container_equipe img {
-    width: 60%;
-    cursor: pointer;
-    transition: 0.4s;
-    box-shadow: #0000003e 0 0 8px 0px;
-
-}
-
-.container_equipe img:hover {
-    transform: scale(1.1);
-}
-
-
-/* FOOTER */
-
-footer {
-    background-color: #000000;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-    height: 20vh;
-    width: 100%;
-    padding: 2%;
-    font-size: 2.25rem;
+    align-items: center;
 }
 
-footer h5 {
-    font-weight: 400;
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    list-style: none;
+    font-size: 1.8vw;
+    letter-spacing: 4px;
+    transition: ease-in 0.5s;
 }
 
-.esquerda {
+.nav-list a:hover {
+    color: #203c4e;
+}
+
+.nav-log {
     display: flex;
     flex-direction: row;
+    gap: 30px;
     align-items: center;
-    gap: 2rem;
-    color: #ffffff;
-    font-size: 1.75rem;
-}
-
-.esquerda img {
-    width: 15%;
-}
-
-.direita {
-    color: #ffffff;
 }
 
 
-/* RESPONSIVIDADE */
+.hero {
+    background-image: url(../assets/imgs/backgroundPredio.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+    padding-top: 5%;
+}
 
-@media (max-width: 1024px) {
-    .nossaSolucao {
-        flex-direction: column;
+.hero img {
+    width: 40%;
+}
+
+.hero-text {
+    display: flex;
+    justify-content: center;
+    font-size: 3vw;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    width: 25%;
+}
+
+.hero span {
+    font-weight: bold;
+}
+
+
+
+@media(max-width:999px) {
+
+    .hero {
+        background-image: url(../assets/imgs/backgroundPredio.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
         justify-content: center;
-        padding: 3%;
-    }
-    .aside, .bside, .contexto {
         align-items: center;
-        justify-content: center;
         width: 100%;
-    }
-    .aside a {
-        font-size: 1.6rem;
-    }
-
-    .imagem {
-        border-radius: 30px;
+        height: 70%;
+        padding-top: 5%;
     }
 
-    .section_porque {
-        height: auto;
+    .hero img {
+        width: 30%;
     }
 
-    .container_porques {
-        flex-direction: column;
-        align-items: center;
-        gap: 2.5rem;
+    .hero-text {
+        display: none;
+    }
+}
+
+/* ------------------------------------------SEÇÃO 2--------------------------------------------- */
+/* -----------DESKTOP----------- */
+@media(min-width:1000px) {
+    .container-solution {
+        height: 50vh;
+        width: 100%;
+        margin-block: 55px;
     }
 
-    .porque_box {
-        min-height: 20vh;
-        width: 80%;
-        font-size: 2.5rem;
-        border-radius: 20px;
-    }
-
-    .section_equipe {
+    .side img {
+        border: solid 1px #000;
+        border-radius: 50%;
         height: 100%;
-    }
-    .container_equipe {
-        padding: 4% 8%;
-        column-gap: 2rem;
-        row-gap: 2rem;
+        width: 12vw;
     }
 }
 
-@media (max-width: 768px) {
+/* -----MOBILE------ */
+@media(max-width:999px) {
+    .container-solution{
+        height: 30vh;
+        width: 100%;
+        margin-block: 55px;
+    }
+
+    .side img {
+        border: solid 1px #000;
+        border-radius: 50%;
+        height: 100%;
+        width: 12vw;
+    }
+}
+
+@media(min-width: 1000px){
+    .side img{
+        width: 18vw;
+    }
+}
+
+.container-solution h1 {
+    display: grid;
+    place-items: center;
+    font-size: 3vw;
+    color: #333;
+}
+
+.solution-side {
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1.2s;
+}
+
+.side:hover{
+    transform: scale(1.2);
+}
+
+
+.side button {
+    color: #000;
+    font-size: 1.8vw;
+    border: none;
+    cursor: pointer;
+}
+
+/* ------------------------------------------SEÇÃO 3--------------------------------------------- */
+.container-why {
+    max-width: 1480px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 3vw;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.boxes-why {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.card-why {
+    border: solid 1px;
+    background-color: #eaeaea;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    line-height: 1.6;
+}
+
+
+@media (min-width: 1000px) {
+    .container-why{
+        height: 35vh;
+    }
+
+    .boxes-why {
+        flex-direction: row; 
+        justify-content: space-between; 
+    }
+    .card-why {
+        flex: 1; 
+        margin: 0 10px;
+    }
+}
+
+
+@media (max-width: 999px) {
+    .container-why {
+        padding: 15px; 
+        height: 40vh;
+    }
+
+    .card-why {
+        padding: 15px; 
+    }
+}
+/* ------------------------------------------SEÇÃO 4 - FOOTER --------------------------------------------- */
+    .footer {
+        background-color: #000;
+        color: white; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: end; 
+        padding: 20px 4%; 
+        position: relative; 
+        bottom: 0; 
+        width: 100%; 
+    }
     
-    .porque_box {
-        font-size: 1.9rem;
+    .footer img {
+        height: 60px; 
+        margin-right: 10px; 
     }
-    .titulo_equipe {
-        font-size: 2.5rem;
+    
+    .footer p {
+        margin: 0; 
     }
-}
+    
+    .footer div {
+        display: flex; 
+        align-items: center; 
+    }
+    
+    .footer div:last-child {
+        text-align: right; 
+    }
 
-@media (max-width: 480px) {
-    .container_equipe {
-        column-gap: .5rem;
-        row-gap: 1.5rem;
-    }
-    .bside {
-        height: 20%;
-    }
-    footer h5{
-        font-size: 1rem;
-    }
-    .esquerda {
-        width: 40%;
-    }
-}
