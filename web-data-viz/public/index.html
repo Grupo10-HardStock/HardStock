@@ -1,62 +1,105 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Cadastro</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 300px;
-        }
-        .logo {
-            width: 100px;
-            margin-bottom: 20px;
-        }
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>HardStock</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="../assets/icon/HardStock-preto.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../script/mobile.js"></script>
 </head>
+
 <body>
-    <div class="container">
-        <img src="logo.png" alt="Logo" class="logo">
-        <form>
-            <input type="text" placeholder="Nome" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Senha" required>
-            <button type="submit">Cadastrar</button>
-        </form>
+    <header id="header">
+        <div class="nav">
+            <div class="nav-list">
+                <a href="">HardStock</a>
+                <div class="nav-log">
+                    <a href="./html/login.html">Login</a>
+                    <a href="./html/cadastro.html">Cadastro</a>
+                </div>
+            </div>
+        </div>
+
+        <button id="mobile_btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item"><a href="./html/login.html">LOGIN</a></li>
+                <li class="nav-item"><a href="./html/cadastro.html">CADASTRO</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="hero-text">
+            <p>Construindo negócios de um <span>futuro</span> melhor</p>
+        </div>
+        <img src="../assets/imgs/HardStock - branco.png">
+    </main>
+
+    <!-- SEÇÃO 2 -->
+    <div class="container-solution">
+        <h1>Solução HardStock</h1>
+
+        <div class="solution-side">
+            <div class="side"  onclick="context()">
+                <img src="../assets/icon/contexto.png">
+                <p>Contexto</p>
+            </div>
+
+            <div class="side" onclick="problem()">
+                <img src="../assets/icon/problema.png">
+                <p>Problema</p>
+            </div>
+
+            <div class="side" onclick="advantage()">
+                <img src="../assets/icon/vantagens.png">
+                <p>Vantagem</p>
+            </div>
+        </div>
     </div>
+
+    <!-- SEÇÃO 3 -->
+    <div class="container-why">
+        <h1> Por que a HardStock? </h1>
+            <div class="boxes-why">
+                <div class="card-why">
+                    <p>Garanta a eficiência e a segurança dos seus sistemas com a HardStock, líder em monitoramento de
+                        hardware. Evite falhas inesperadas, reduza custos com manutenção e proteja seus dados críticos
+                        com nossa tecnologia avançada.</p>
+                </div>
+
+                <div class="card-why">
+                    <p>A HardStock proporciona uma análise detalhada sobre seus sistemas, monitorando e garantindo
+                        durabilidade e desempenho. Além disso, estamos sempre pensando em novas atualizações para sua
+                        melhor
+                        experiência.</p>
+                </div>
+            </div>
+    </div>
+
+    <footer class="footer">
+        <div>
+            <img src="../assets/imgs/github.png" alt="GitHub do projeto">
+            <p>SPTech</p>
+        </div>
+
+        <div>
+            <p>copyrigth &copy; 2024 HardStock</p>
+        </div>
+    </footer>
 </body>
+
 </html>
