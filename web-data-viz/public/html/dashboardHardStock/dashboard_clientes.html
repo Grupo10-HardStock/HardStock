@@ -14,10 +14,40 @@
 <style>
   .alinhamento{
           display: flex;
+          flex-direction: column;
           margin-top: 5%;
           width: 80%;
         }
         
+
+        #add{
+          width: auto;
+          display: flex;
+          justify-content: end;
+          align-items: center;
+          background-color: transparent;
+        }
+        
+        #add a {
+          display: flex;
+          border-radius: 50px;
+          align-items: center;
+          width: 210px;
+          font-weight: bold;
+          color: white;
+          background-color: #000000;
+          padding: inherit;
+          padding-left: 2%;
+        }
+
+        #icone{
+          padding-left: 2%;
+          width: auto;
+          margin-left: 2%;
+          margin-bottom: 9px;
+        }
+
+
         #userTable {
             margin: 20px auto;
             padding: 20px;
@@ -108,6 +138,13 @@
             <span class="nav-item">Hardstock</span>
           </p>
         </li>
+        <li>
+          <p style="margin-bottom: 20px;">
+            <span class="navItem-nome">
+              Olá, Fernanda
+            </span>
+          </p>
+        </li>
         <li><a href="../dashboardHardStock/dashboard_empresa.html">
           <i class="fa-solid fa-square-plus"></i>
             <span class="navItem">Cadastro Empresa</span>
@@ -141,9 +178,9 @@
 </div>
 
 <div class="alinhamento">
+  <button id="add"><a href="#">Novo Funcionário <i id="icone" class="fa-solid fa-plus"></i></a></button>
   <div id="userTable"></div>
 </div>
-
 
 
 
