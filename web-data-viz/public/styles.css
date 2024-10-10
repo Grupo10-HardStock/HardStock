@@ -141,10 +141,6 @@ nav ul li a:hover {
     color: white;
 }
 
-.dark-mode footer {
-    background-color: #191b27;
-}
-
 .dark-mode nav ul li a {
     color: #ccc;
 }
@@ -306,7 +302,7 @@ form button:hover {
 }
 
 footer {
-    background-color: #232739;
+    background-color: #191b27;
     color: white;
     padding: 20px 0;
     text-align: center;
