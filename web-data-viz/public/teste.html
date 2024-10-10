@@ -68,6 +68,8 @@
         nav ul li {
             margin-left: 20px;
             width: auto;
+            display: flex;
+            align-items: center;
         }
 
         nav ul li a {
@@ -92,6 +94,17 @@
 
         .login-button:hover {
             background-color: #141620;
+        }
+
+        .theme-icon {
+            cursor: pointer;
+            font-size: 20px;
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-icon:hover {
+            transform: scale(2.0);
         }
 
         .dark-mode nav ul li a {
@@ -123,6 +136,65 @@
             color: #333;
         }
 
+        .dark-mode {
+            background-color: #333;
+            /* Cor de fundo escura */
+            color: #f0f0f0;
+            /* Cor de texto clara */
+        }
+
+        .dark-mode header {
+            background-color: #333;
+            /* Cor de fundo do header no modo escuro */
+        }
+
+        .dark-mode #solutions {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+        .dark-mode .solution {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+        .dark-mode #about {
+            background-color: #444;
+            color: #f0f0f0;
+        }
+
+        .dark-mode #about p {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+        .dark-mode #contact {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+        .dark-mode #contact .container {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+        .dark-mode #contact .container .btn-primary {
+            background-color: grey;
+            color: black;
+        }
+
+        .dark-mode footer {
+            background-color: #555;
+        }
+
+        .dark-mode nav ul li a {
+            color: #ccc;
+        }
+
+        .dark-mode nav ul li a:hover {
+            background-color: #555;
+        }
+
         .hero {
             margin-top: 0;
             background-image: url(../public/assets/imgs/backgroundPredio.png);
@@ -135,7 +207,7 @@
         .hero h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            backdrop-filter: blur(3px);
+            /* backdrop-filter: blur(3px); */
         }
 
         .hero p {
@@ -224,7 +296,13 @@
         #contact {
             margin-top: 10px;
             padding: 90px 30px 10px;
-            ;
+            background-color: white;
+        }
+
+        #contact .container {
+            margin-top: 10px;
+            padding: 90px 30px 10px;
+            width: auto;
             background-color: white;
         }
 
@@ -392,7 +470,7 @@
             <nav>
                 <ul>
                     <li>
-                        <button class="toggle-dark-mode" onclick="toggleDarkMode()">Modo Escuro</button>
+                        <i class="fa-solid fa-moon theme-icon" id="themeToggleIcon" onclick="toggleDarkMode()"></i>
                     </li>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#solutions">Solução</a></li>
@@ -498,7 +576,7 @@
 
 </html>
 
-<script>
+<!-- <script>
     function toggleDarkMode() {
         const body = document.body;
         const button = document.querySelector('.toggle-dark-mode');
@@ -509,6 +587,28 @@
             button.textContent = 'Modo Claro';
         } else {
             button.textContent = 'Modo Escuro';
+        }
+    }
+
+
+
+</script> -->
+
+<script>
+    function toggleDarkMode() {
+        const body = document.body;
+        const themeToggleIcon = document.getElementById('themeToggleIcon');
+
+        // Alterna o modo escuro/claro
+        body.classList.toggle('dark-mode');
+
+        // Alterar ícone conforme o tema
+        if (body.classList.contains('dark-mode')) {
+            themeToggleIcon.classList.remove('fa-moon');
+            themeToggleIcon.classList.add('fa-sun'); // Ícone de sol para o modo escuro
+        } else {
+            themeToggleIcon.classList.remove('fa-sun');
+            themeToggleIcon.classList.add('fa-moon'); // Ícone de lua para o modo claro
         }
     }
 </script>
