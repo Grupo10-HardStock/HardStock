@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./dashboard-gerente.css">
+  <link rel="stylesheet" href="./dashboard-hardstock.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -124,7 +124,7 @@
 
 </head>
 
-<body>
+<body onload="carregarNome()">
   <label for="sidebar-ativo" class="sideBar-open">
     <i class="fa-duotone fa-solid fa-bars"></i>
   </label>
@@ -138,14 +138,14 @@
       <ul>
         <li>
           <p class="logo">
-            <img src="../assets/icon/HardStock-preto.png" alt="">
+            <img src="../assets/icon/HardStock - branco.png" alt="">
             <span class="nav-item">Hardstock</span>
           </p>
         </li>
         <li>
           <p style="margin-bottom: 20px;">
-            <span class="navItem-nome">
-              Olá, Fernanda
+            <span id="nome" class="navItem-nome">
+
             </span>
           </p>
         </li>
@@ -158,19 +158,25 @@
             <span class="navItem">Cadastro Gerente</span>
           </a>
         </li>
-        <li><a href="../dashboardHardStock/dashboard_clientes.html" style="background: rgb(0, 0, 0);color: #ffffff;">
+        <li><a href="../dashboardHardStock/dashboard_clientes.html"
+            style="background: rgba(199, 208, 216, 1);color: #191b27;">
             <i class="fa-solid fa-people-group"></i>
-            <span class="navItem">Empresas</span>
+            <span class="navItem" style="color: #191b27;">Empresas</span>
+          </a></li>
+        <li><a href="../dashboardHardStock/dashboard-feedback.html">
+            <i class="fa-solid fa-message"></i>
+            <span class="navItem">Feedbacks</span>
           </a></li>
 
 
         <div class="sair">
-          <li><a href="#">
+          <li><a href="https://heathtech.atlassian.net/servicedesk/customer/portal/4
+" target="_blank">
               <i class="fa-solid fa-headset"></i>
               <span class="navItem">Suporte</span>
             </a></li>
           <li>
-            <a href="../../HardStock.html">
+            <a href="../../index.html">
               <i class="fa-solid fa-arrow-right-from-bracket"></i>
               <span class="navItem">Sair</span>
             </a>
@@ -181,7 +187,7 @@
   </nav>
   </div>
 
-  <div class="alinhamento">  
+  <div class="alinhamento">
     <h1>Empresas</h1>
     <div id="userTable"></div>
   </div>
@@ -192,7 +198,7 @@
 
 </html>
 <script>
-function populateTable(users) {
+  function populateTable(users) {
     let tableHTML = '<table><thead><tr><th>ID</th><th>Nome Empresa</th><th>Email</th><th>... Edições</th></tr></thead><tbody>';
 
     users.forEach(user => {
@@ -236,4 +242,9 @@ function populateTable(users) {
   ];
 
   populateTable(usersFromDB);
+
+  function carregarNome(){
+     let text = sessionStorage.NOME_USUARIO;
+    nome.innerHTML = "Olá, " + text;
+  }
 </script>

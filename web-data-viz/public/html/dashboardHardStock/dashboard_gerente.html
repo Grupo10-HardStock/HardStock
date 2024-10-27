@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./dashboard-gerente.css">
+  <link rel="stylesheet" href="./dashboard-hardstock.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -13,45 +13,46 @@
 </head>
 
 <style>
-     .alinhamento {
+  .alinhamento {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-top: 2%;
     width: 50%;
     height: 90%;
-    background-color: gainsboro;
+    background-color: white;
     border-radius: 50px;
     padding-top: 20px;
-}
+  }
 
-.campos {
+  .campos {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-}
+    padding: 0px 20px 0px 20px;
+  }
 
-.antes, .depois {
+  .antes,
+  .depois {
     width: 45%;
-}
+  }
 
-.titulo {
+  .titulo {
     margin-bottom: 20px;
     font-size: 1.2rem;
-}
+  }
 
-label {
+  label {
     display: block;
     /* margin-bottom: 20px; */
-}
+  }
 
-label p {
+  label p {
     font-size: 1rem;
     /* margin-bottom: 5px; */
-}
+  }
 
-#inputEditar {
+  input {
     width: 100%;
     height: 35px;
     border: none;
@@ -60,47 +61,49 @@ label p {
     font-size: 1rem;
     padding: 5px;
     margin-bottom: 10px;
-}
-#btnCancel, #btnSave {
-    margin-top: 20px;
+  }
+
+  #btnCancel,
+  #btnSave {
+    margin-top: 12px;
     padding: 10px 20px;
     width: auto;
     height: auto;
     font-size: 1rem;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-}
+  }
 
-#btnCancel {
+  #btnCancel {
     background-color: white;
     border: 1px solid red;
     color: red;
     margin-right: 10px;
-}
+  }
 
-#btnSave {
+  #btnSave {
     background-color: rgb(11, 239, 11);
     border: 1px solid rgb(11, 239, 11);
     color: white;
-}
+  }
 
-button:hover {
+  button:hover {
     opacity: 0.8;
-}
+  }
 
-#select{
-        text-align: center;
-        background-color: #c7d0d8;
-        font-size: large;
-        padding: 0.5%;
-        border-radius: 50px;
-        width: auto;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-
+  #select {
+    text-align: center;
+    background-color: #c7d0d8;
+    font-size: large;
+    padding: 0.5%;
+    border-radius: 50px;
+    width: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 </style>
-<body>
+
+<body onload="carregarNome()">
   <label for="sidebar-ativo" class="sideBar-open">
     <i class="fa-duotone fa-solid fa-bars"></i>
   </label>
@@ -114,39 +117,43 @@ button:hover {
       <ul>
         <li>
           <p class="logo">
-            <img src="../assets/icon/HardStock-preto.png" alt="">
+            <img src="../assets/icon/HardStock - branco.png" alt="">
             <span class="nav-item">Hardstock</span>
           </p>
         </li>
         <li>
           <p style="margin-bottom: 20px;">
-            <span class="navItem-nome">
-              Olá, Fernanda
-            </span>
+            <span id="nomeTop" class="navItem-nome"></span>
           </p>
         </li>
         <li><a href="../dashboardHardStock/dashboard_empresa.html">
             <i class="fa-solid fa-square-plus"></i>
             <span class="navItem">Cadastro Empresa</span>
           </a></li>
-        <li><a href="../dashboardHardStock/dashboard_gerente.html" style="background: rgb(0, 0, 0);color: #ffffff;">
+        <li><a href="../dashboardHardStock/dashboard_gerente.html"
+            style="background: rgba(199, 208, 216, 1);color: #191b27;">
             <i class="fa-solid fa-user-plus"></i>
-            <span class="navItem">Cadastro Gerente</span>
+            <span class="navItem" style="color: #191b27;">Cadastro Gerente</span>
           </a>
         </li>
         <li><a href="../dashboardHardStock/dashboard_clientes.html">
             <i class="fa-solid fa-people-group"></i>
             <span class="navItem">Empresas</span>
           </a></li>
-
+        <li><a href="../dashboardHardStock/dashboard-feedback.html">
+            <i class="fa-solid fa-message"></i>
+            <span class="navItem">Feedbacks</span>
+          </a>
+        </li>
 
         <div class="sair">
-          <li><a href="#">
+          <li><a href="https://heathtech.atlassian.net/servicedesk/customer/portal/4
+" target="_blank">
               <i class="fa-solid fa-headset"></i>
               <span class="navItem">Suporte</span>
             </a></li>
           <li>
-            <a href="../../HardStock.html">
+            <a href="../../index.html">
               <i class="fa-solid fa-arrow-right-from-bracket"></i>
               <span class="navItem">Sair</span>
             </a>
@@ -161,43 +168,114 @@ button:hover {
     <h1>Cadastrar Gerente</h1>
     <select name="empresa" id="select">
       <option value="#" disabled selected>Selecione a Empresa:</option>
-      <option value="1">Profit</option>
-      <option value="2">CVM</option>
-      <option value="3">B3</option>
+
     </select>
     <div class="campos">
       <div class="antes">
         <label id="nome">
           <p>Nome:</p><br>
-          <input id="inputEditar" type="text" placeholder="Informe seu Nome:"><br>
+          <input id="input_nome" type="text" placeholder="Informe seu Nome:"><br>
         </label>
         <label id="sobrenome">
           <p>Sobrenome:</p><br>
-          <input id="inputEditar" type="text" placeholder="Informe seu Sobrenome:"><br>
+          <input id="input_sobrenome" type="text" placeholder="Informe seu Sobrenome:"><br>
         </label>
         <label id="telefone">
           <p>Telefone:</p><br>
-          <input id="inputEditar" type="text" placeholder="Informe seu Telefone:"><br>
+          <input id="input_telefone" type="text" placeholder="Informe seu Telefone:"><br>
         </label>
       </div>
       <div class="depois">
         <label>
           <p>E-mail:</p><br>
-          <input id="inputEditar" type="text" placeholder="Informe seu E-mail:"><br>
+          <input id="input_email" type="text" placeholder="Informe seu E-mail:"><br>
         </label>
-        <label> 
+        <label>
           <p>Senha:</p><br>
-          <input id="inputEditar" type="text" placeholder="Informe sua Senha:"><br>
+          <input id="input_senha" type="text" placeholder="Informe sua Senha:"><br>
         </label>
         <label>
           <p>Permissão:</p><br>
-          <input id="inputEditar" type="text" placeholder="Informe sua Permissão:"><br>
+          <select id="input_permissao">
+            <option disabled selected>Selecione o cargo</option>
+            <option value="1">ADM</option>
+            <option value="2">Gerente</option>
+            <option value="3">Analista</option>
+          </select>
+
         </label>
       </div>
     </div>
-    <button id="btnSave">Salvar</button>
+    <button onclick="verificarCampos()" id="btnSave">Salvar</button>
   </div>
 
 </body>
+
+<script>
+  function verificarCampos() {
+    let nome = document.getElementById("input_nome").value;
+    let sobrenome = document.getElementById("input_sobrenome").value;
+    let telefone = document.getElementById("input_telefone").value;
+    let email = document.getElementById("input_email").value;
+    let senha = document.getElementById("input_senha").value;
+    let permissao = document.getElementById("input_permissao").value;
+    let empresa = document.getElementById("select").value;
+
+    if (nome === "" || sobrenome === "" || telefone === "" || email === "" || senha === "" || permissao === "" || empresa === "") {
+      alert("Por favor, preencha todos os campos.");
+
+    } else if (!email.includes("@") || !email.includes(".")) {
+      alert("Por favor, insira um e-mail válido.");
+    } else if (senha.length < 8) {
+      alert("Por favor, insira uma senha com pelo menos 8 caracteres.");
+
+    } else if (telefone < 11) {
+      alert("Por favor, insira um número de telefone válido.");
+    } else {
+      cadastro(nome, sobrenome, telefone, email, senha, permissao, empresa);
+    }
+  }
+
+  function cadastro(nome, sobrenome, telefone, email, senha, permissao, empresa) {
+
+    fetch("/empresas/cadastrarGerente", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+
+        nomeServer: nome,
+        sobrenomeServer: sobrenome,
+        telefoneServer: telefone,
+        emailServer: email,
+        senhaServer: senha,
+        permissaoServer: permissao,
+        empresaServer: empresa,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+
+          alert("Gerente cadastrado com sucesso!")
+
+        } else {
+          throw alert("Houve um erro ao tentar realizar o cadastro!");
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    return false;
+  }
+
+  function carregarNome() {
+    let text = sessionStorage.NOME_USUARIO;
+    nomeTop.innerHTML = "Olá, " + text;
+  }
+</script>
 
 </html>
